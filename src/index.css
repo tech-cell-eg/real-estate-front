@@ -3,6 +3,13 @@
 @tailwind utilities;
 
 
+
+.container-main {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
 .main-color{
     color: #C29062;
 }
