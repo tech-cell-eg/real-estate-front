@@ -1,21 +1,12 @@
-
-import "./App.css";
-import Home from "./Company/Pages/Home/Home";
-
-function App() {
-  return (
-    <>
-     
-    </>
-  );
-}
-
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import NotFound from "./UI/errors/NotFound";
 import ErrorElement from "./UI/errors/ErrorElement";
 import NotAuthorized from "./UI/errors/NotAuthorized";
 import ProtectedRoute from "./navigation/ProtectedRoute";
 import RoleProtectedRoute from "./navigation/RoleProtectedRoute";
+import "./App.css";
+import Home from "./Home/Home";
+import CompanyHome from "./Company/Pages/Home/Home";
 
 
 export default function App() {
@@ -23,7 +14,7 @@ export default function App() {
     {
       path: "/",
       children: [
-        // { index: true, element: <Home /> },
+        { index: true, element: <Home /> },
         // { path: "login", element: <Login /> },
         // { path: "register", element: <Register /> },
       ],
@@ -45,7 +36,7 @@ export default function App() {
       element: (
         <ProtectedRoute>
           <RoleProtectedRoute allowedRoles={["company"]}>
-            {/* <CompanyDashboard /> */}
+            <CompanyHome />
           </RoleProtectedRoute>
         </ProtectedRoute>
       ),
