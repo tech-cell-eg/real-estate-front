@@ -7,6 +7,7 @@ import RoleProtectedRoute from "./navigation/RoleProtectedRoute";
 import "./App.css";
 import Home from "./Home/Home";
 import CompanyHome from "./Company/Pages/Home/Home";
+import CLientHome from "./client/pages/ClientHome";
 
 // ! You can find an example for routing for your flow in company role
 
@@ -25,9 +26,9 @@ export default function App() {
       path: "/client",
       element: (
         <ProtectedRoute>
-          <RoleProtectedRoute allowedRoles={["client"]}>
-            {/* <ClientDashboard /> */}
-          </RoleProtectedRoute>
+          {/* <RoleProtectedRoute allowedRoles={["client"]}> */}
+           <CLientHome />
+          {/* </RoleProtectedRoute> */}
         </ProtectedRoute>
       ),
       errorElement: <ErrorElement />,

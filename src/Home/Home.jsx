@@ -24,7 +24,10 @@ function Home() {
 
   return (
     <Layout sidebarTabs={sidebarTabs}>
-      <div>Hello Qaim</div>
+      <div className="text-center p-6 bg-yellow-100 border border-yellow-400 rounded-md shadow-lg text-lg font-semibold">
+        You can take this layout from "./Home/layout" for your individual
+        component and start working from here instead of starting from scratch.
+      </div>
     </Layout>
   );
 }
