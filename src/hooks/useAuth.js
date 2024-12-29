@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 export function useAuth() {
   const [user, setUser] = useState(null);
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(true); //!change to false when API is ready
 
   useEffect(() => {
     const fetchUser = async () => {

@@ -8,6 +8,7 @@ import "./App.css";
 import Home from "./Home/Home";
 import CompanyHome from "./Company/Pages/Home/Home";
 
+// ! You can find an example for routing for your flow in company role
 
 export default function App() {
   const routes = createBrowserRouter([
@@ -32,15 +33,29 @@ export default function App() {
       errorElement: <ErrorElement />,
     },
     {
+      //! Here is the main route of the role
       path: "/company",
       element: (
         <ProtectedRoute>
-          <RoleProtectedRoute allowedRoles={["company"]}>
+          {/* <RoleProtectedRoute allowedRoles={["company"]}> //! We will uncommented this line after creating the role */}
             <CompanyHome />
-          </RoleProtectedRoute>
+          {/* </RoleProtectedRoute> */}
         </ProtectedRoute>
       ),
-      errorElement: <ErrorElement />,
+      children: [
+        //! Create a nested routes for your role
+        {
+          path: "settings", //! Name for the path
+          element: (
+            <ProtectedRoute>
+              <RoleProtectedRoute allowedRoles={["company"]}>
+                {/* Here is the element of the path */}
+              </RoleProtectedRoute>
+            </ProtectedRoute>
+          ),
+        },
+      ],
+      errorElement: <ErrorElement />, //! and finally the error element
     },
     {
       path: "/reviewer",
