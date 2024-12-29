@@ -1,9 +1,10 @@
 import "./App.css";
+import Home from "./Company/Pages/Home/Home";
 
 function App() {
   return (
     <>
-      <div className="text-3xl  text-red-500 font-bold" >Hello Qaim</div>
+     
     </>
   );
 }
