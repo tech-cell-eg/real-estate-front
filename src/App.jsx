@@ -1,11 +1,9 @@
 import "./App.css";
+import Home from "./Home/Home";
 
 function App() {
-  return (
-    <>
-      <div>Hello Qaim</div>
-    </>
-  );
+  // const sidebarTabs = [{ label: "", link: " ", icon: "" }];
+  return <Home />;
 }
 
 export default App;
