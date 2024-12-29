@@ -24,7 +24,7 @@ function Home() {
 
   return (
     <Layout sidebarTabs={sidebarTabs}>
-      <div>Hello Qaim</div>
+      <div>Welcome CLient</div>
     </Layout>
   );
 }
