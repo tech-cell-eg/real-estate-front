@@ -13,14 +13,15 @@ const Layout = ({ children, sidebarTabs }) => {
       >
         <div className="flex items-center gap-4">
           {/* User Avatar */}
-          <button className="relative">
-            <span className="material-icons text-white">شركة عقاركم</span>
-          </button>
           <img
             src="https://via.placeholder.com/40"
             alt="User"
             className="w-10 h-10 rounded-full border border-gray-300"
           />
+          <button className="relative">
+            <span className="material-icons text-white">شركة عقاركم</span>
+          </button>
+
           <div className=" text-2xl text-[rgba(194,144,98,1)]">
             <AiFillBell />
           </div>
