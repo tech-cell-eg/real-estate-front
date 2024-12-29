@@ -1,6 +1,19 @@
+
+import "./App.css";
+import Home from "./Company/Pages/Home/Home";
+
+function App() {
+  return (
+    <>
+     
+    </>
+  );
+}
+
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import NotFound from "./UI/errors/NotFound";
 import ErrorElement from "./UI/errors/ErrorElement";
+
 
 
 export default function App() {
