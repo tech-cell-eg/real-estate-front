@@ -1,4 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import NotFound from "./UI/errors/NotFound";
+import ErrorElement from "./UI/errors/ErrorElement";
 
 
 export default function App() {
@@ -9,31 +11,31 @@ export default function App() {
       children: [
         // { index: true, element: <Home /> },
       ],
-      // errorElement: <ErrorElement />,
+      errorElement: <ErrorElement />,
     },
     // { path: "/login", element: <Login /> },
     // { path: "/register", element: <Register /> },
     {
       path: "/client",
       // element: <ClientDashboard />,
-      // errorElement: <ErrorElement />,
+      errorElement: <ErrorElement />,
     },
     {
       path: "/company",
       // element: <CompanyDashboard />,
-      // errorElement: <ErrorElement />,
+      errorElement: <ErrorElement />,
     },
     {
       path: "/reviewer",
       // element: <ReviewerDashboard />,
-      // errorElement: <ErrorElement />,
+      errorElement: <ErrorElement />,
     },
     {
       path: "/inspector",
       // element: <InspectorDashboard />,
-      // errorElement: <ErrorElement />,
+      errorElement: <ErrorElement />,
     },
-    // { path: "*", element: <NotFound /> },
+    { path: "*", element: <NotFound /> },
   ]);
 
   return <RouterProvider router={routes} />;
