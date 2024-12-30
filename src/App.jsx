@@ -5,6 +5,7 @@ import Home from "./Company/Pages/Home/Home";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import NotFound from "./UI/errors/NotFound";
 import ErrorElement from "./UI/errors/ErrorElement";
+import TermsAndCondattions from "./Company/Pages/TermsAndCondation/TermsAndCondattions";
 
 
 
@@ -15,6 +16,7 @@ export default function App() {
      
       children: [
       { path: "/", element: <Home /> },
+      { path: "/terms", element: <TermsAndCondattions/>}
         
         // { index: true, element: <Home /> },
       ],
