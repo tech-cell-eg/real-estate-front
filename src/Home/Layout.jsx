@@ -1,4 +1,5 @@
 import { AiFillBell } from "react-icons/ai";
+import { Link } from "react-router-dom";
 
 const Layout = ({ children, sidebarTabs }) => {
   return (
@@ -50,8 +51,8 @@ const Layout = ({ children, sidebarTabs }) => {
           <ul className="space-y-4">
             {sidebarTabs.map((tab) => (
               <li key={tab.label}>
-                <a
-                  href={tab.link}
+                <Link
+                  to={tab.link}
                   className="flex justify-start items-center gap-3 text-gray-700 hover:text-gray-900 hover:bg-gray-100 px-3 py-2 rounded-md"
                 >
                   <div className="text-[rgba(194,144,98,1)] text-xl">
@@ -60,7 +61,7 @@ const Layout = ({ children, sidebarTabs }) => {
                   <div className="text-right hover:text-[rgba(194,144,98,1)]">
                     {tab.label}
                   </div>
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
