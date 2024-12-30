@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom";
-import Layout from "../../Home/Layout";
+import Layout from "../../UI/layout/Layout";
 import {
   FaHome,
   FaUsers,
@@ -11,7 +11,7 @@ import {
   FaSignOutAlt,
 } from "react-icons/fa";
 
-function Home() {
+function Index() {
   const sidebarTabs = [
     { label: "الرئيسية", link: "", icon: <FaHome /> },
     { label: "اضافه عقار", link: "add-property", icon: <FaUsers /> },
@@ -30,4 +30,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Index;

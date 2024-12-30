@@ -1,4 +1,4 @@
-import Layout from "./Layout";
+import Layout from "../UI/layout/Layout";
 import {
   FaHome,
   FaUsers,

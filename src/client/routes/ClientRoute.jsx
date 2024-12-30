@@ -1,6 +1,6 @@
 import ProtectedRoute from "../../navigation/ProtectedRoute";
 import RoleProtectedRoute from "../../navigation/RoleProtectedRoute";
-import CLientHome from "../pages/ClientHome";
+import Index from "../pages/Index";
 import ErrorElement from "../../UI/errors/ErrorElement";
 
 const clientRoute = {
@@ -8,7 +8,7 @@ const clientRoute = {
   element: (
     <ProtectedRoute>
       {/* <RoleProtectedRoute allowedRoles={["client"]}> */}
-      <CLientHome />
+      <Index />
       {/* </RoleProtectedRoute> */}
     </ProtectedRoute>
   ),
