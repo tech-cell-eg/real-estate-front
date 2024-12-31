@@ -3,6 +3,7 @@ import ProtectedRoute from "../../navigation/ProtectedRoute";
 import Index from "../pages/Index";
 import ErrorElement from "../../UI/errors/ErrorElement";
 import ClientHome from "../pages/ClientHome";
+import AddProperty from "../pages/AddProperty";
 
 const clientRoute = {
   path: "/client",
@@ -16,7 +17,7 @@ const clientRoute = {
   errorElement: <ErrorElement />,
   children: [
     { index: true, element: <ClientHome/> },
-    { path: "add-property", element: <div>Add Property</div> },
+    { path: "add-property", element: <AddProperty/> },
     { path: "offers", element: <div>Offers</div> },
     { path: "requests", element: <div>Requests</div> },
     { path: "payments", element: <div>Payments</div> },
