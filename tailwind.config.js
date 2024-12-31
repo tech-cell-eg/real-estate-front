@@ -10,6 +10,15 @@ export default {
       colors: {
         primary: "#C29062",
       },
+      components: {
+        label: {
+          styles: {
+            default: {
+              color: "black",
+            },
+          },
+        },
+      },
     },
   },
   plugins: [import("flowbite/plugin"), import("@tailwindcss/line-clamp")],

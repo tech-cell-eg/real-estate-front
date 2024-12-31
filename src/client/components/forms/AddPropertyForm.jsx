@@ -1,6 +1,6 @@
-import Button from "./Button";
-import addPicture from "../../assets/client/addPicture.png";
-import addLocation from "../../assets/client/addLocation.png";
+import Button from "../Button";
+import addPicture from "../../../assets/client/addPicture.png";
+import addLocation from "../../../assets/client/addLocation.png";
 const AddPropertyForm = () => {
   return (
     <div className=" p-8 rounded-lg shadow-lg w-full ">

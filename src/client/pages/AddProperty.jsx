@@ -1,5 +1,5 @@
 import AddPropertyHeader from "../components/AddPropertyHeader";
-import AddPropertyForm from "../components/AddPropertyForm";
+import AddPropertyForm from "../components/forms/AddPropertyForm";
 
 const AddProperty = () => {
   return (
