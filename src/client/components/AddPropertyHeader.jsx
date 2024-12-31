@@ -1,5 +1,5 @@
 import addProperty from "../../assets/client/addProperty.svg";
-import done from "../../assets/client/done.png";
+import check from "../../assets/client/check.png";
 
 const AddPropertyHeader = () => {
   return (
@@ -15,15 +15,15 @@ const AddPropertyHeader = () => {
         </p>
         <ul className="space-y-4 text-gray-600">
           <li className="flex items-center text-lg">
-            <img src={done} alt="list" className="w-6 h-6 ml-2" />
+            <img src={check} alt="list" className="w-6 h-6 ml-2" />
             طلبات جادة وحقيقية
           </li>
           <li className="flex items-center text-lg">
-            <img src={done} alt="list" className="w-6 h-6 ml-2" />
+            <img src={check} alt="list" className="w-6 h-6 ml-2" />
             بدون رسوم
           </li>
           <li className="flex items-center text-lg">
-            <img src={done} alt="list" className="w-6 h-6 ml-2" />
+            <img src={check} alt="list" className="w-6 h-6 ml-2" />
             تجربة مُستخدم سهلة وبسيطة
           </li>
         </ul>

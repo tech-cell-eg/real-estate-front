@@ -1,4 +1,6 @@
 import Button from "./Button";
+import cancel from "../../assets/client/cancel.png";
+import edit from "../../assets/client/edit.png";
 
 const PropertyCard = () => {
   return (
@@ -6,7 +8,7 @@ const PropertyCard = () => {
       {/* Image */}
       <div className="relative h-40">
         <img
-          src="https://cdn-icons-png.flaticon.com/512/10926/10926798.png"
+          src="https://newstart-eg.com/static/images/placeholder.jpg"
           alt="Property"
           className="w-full h-full object-cover"
         />
@@ -29,13 +31,13 @@ const PropertyCard = () => {
         {/* Buttons */}
         <div className="flex justify-between">
           <Button
-            icon="/edit.png"
+            icon={edit}
             label="تعديل"
             onClick={() => console.log("Edit clicked")}
             className="px-5 py-1"
           />
           <Button
-            icon="/cancel.png"
+            icon={cancel}
             label="إنهاء"
             onClick={() => console.log("Delete clicked")}
             className=" px-5 py-1"
