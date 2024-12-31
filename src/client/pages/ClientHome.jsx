@@ -15,15 +15,6 @@ function ClientHome() {
         <PropertyCard />
         <PropertyCard />
         <PropertyCard />
-        <PropertyCard />
-        <PropertyCard />
-        <PropertyCard />
-        <PropertyCard />
-        <PropertyCard />
-        <PropertyCard />
-        <PropertyCard />
-        <PropertyCard />
-        <PropertyCard />
       </div>
     </div>
     </>

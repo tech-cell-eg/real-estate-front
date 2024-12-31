@@ -5,7 +5,7 @@ const Button = ({ label, onClick, type = "button", className, icon }) => {
     <button
       type={type}
       onClick={onClick}
-      className={`flex items-center justify-center gap-2 px-4 py-2 text-white bg-gradient-to-l from-primary to-black rounded shadow hover:opacity-90 transition ${className}`}
+      className={`flex items-center justify-center gap-2 px-4 py-2 text-white bg-gradient-to-r from-primary to-orange-900 rounded shadow transition ${className}`}
     >
       {label}
       {icon && <img src={icon} alt="" className="w-5 h-5" />}

@@ -4,6 +4,8 @@ import Index from "../pages/Index";
 import ErrorElement from "../../UI/errors/ErrorElement";
 import ClientHome from "../pages/ClientHome";
 import AddProperty from "../pages/AddProperty";
+import Terms from "../pages/Terms";
+import ClientProfile from "../pages/ClientProfile";
 
 const clientRoute = {
   path: "/client",
@@ -21,8 +23,8 @@ const clientRoute = {
     { path: "offers", element: <div>Offers</div> },
     { path: "requests", element: <div>Requests</div> },
     { path: "payments", element: <div>Payments</div> },
-    { path: "terms", element: <div>Terms and Conditions</div> },
-    { path: "settings", element: <div>Settings</div> },
+    { path: "terms", element: <Terms/>},
+    { path: "settings", element: <ClientProfile/> },
     { path: "logout", element: <div>Logout</div> },
   ],
 };
