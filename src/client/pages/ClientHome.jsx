@@ -1,33 +1,33 @@
-import { Outlet } from "react-router-dom";
-import Layout from "../../Home/Layout";
-import {
-  FaHome,
-  FaUsers,
-  FaProjectDiagram,
-  FaCreditCard,
-  FaRegBuilding,
-  FaFileContract,
-  FaCog,
-  FaSignOutAlt,
-} from "react-icons/fa";
+import { Breadcrumb } from "flowbite-react";
+import PropertyCard from "../components/PropertyCard";
 
-function Home() {
-  const sidebarTabs = [
-    { label: "الرئيسية", link: "", icon: <FaHome /> },
-    { label: "اضافه عقار", link: "add-property", icon: <FaUsers /> },
-    { label: "عروض", link: "offers", icon: <FaProjectDiagram /> },
-    { label: "طلبات", link: "requests", icon: <FaRegBuilding /> },
-    { label: "المدفوعات", link: "payments", icon: <FaCreditCard /> },
-    { label: "شروط وأحكام", link: "terms", icon: <FaFileContract /> },
-    { label: "الإعدادات", link: "settings", icon: <FaCog /> },
-    { label: "تسجيل الخروج", link: "logout", icon: <FaSignOutAlt /> },
-  ];
-
+function ClientHome() {
   return (
-    <Layout sidebarTabs={sidebarTabs}>
-      <Outlet />
-    </Layout>
+    <>
+    <Breadcrumb className="text-primary font-bold text-lg">
+    الرئيسة
+    <Breadcrumb.Item>جميع العقارات</Breadcrumb.Item>
+  </Breadcrumb>
+    <div className="min-h-screen bg-gray-100 p-4">
+      <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-3 gap-6">
+        <PropertyCard />
+        <PropertyCard />
+        <PropertyCard />
+        <PropertyCard />
+        <PropertyCard />
+        <PropertyCard />
+        <PropertyCard />
+        <PropertyCard />
+        <PropertyCard />
+        <PropertyCard />
+        <PropertyCard />
+        <PropertyCard />
+        <PropertyCard />
+        <PropertyCard />
+      </div>
+    </div>
+    </>
   );
 }
 
-export default Home;
+export default ClientHome;
