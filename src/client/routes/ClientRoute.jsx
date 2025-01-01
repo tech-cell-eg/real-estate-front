@@ -7,6 +7,8 @@ import AddProperty from "../pages/AddProperty";
 import Terms from "../pages/Terms";
 import ClientProfile from "../pages/ClientProfile";
 import Offers from "../pages/Offers";
+import OfferDetails from "../pages/OfferDetails";
+import AcceptedOfferDetails from "../pages/AcceptedOfferDetails";
 
 const clientRoute = {
   path: "/client",
@@ -21,7 +23,13 @@ const clientRoute = {
   children: [
     { index: true, element: <ClientHome/> },
     { path: "add-property", element: <AddProperty/> },
-    { path: "offers", element: <Offers/> },
+    { path: "offers",
+      children:[
+        {index:true,  element: <Offers/> },
+        {path:"details", element: <OfferDetails/>},
+        {path :"accepted-offer-details", element: <AcceptedOfferDetails/>},
+      ]
+     },
     { path: "requests", element: <div>Requests</div> },
     { path: "payments", element: <div>Payments</div> },
     { path: "terms", element: <Terms/>},
