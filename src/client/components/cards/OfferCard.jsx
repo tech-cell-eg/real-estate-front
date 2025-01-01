@@ -3,6 +3,7 @@ import Dialog from "../Dialog";
 import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
 import Confirmation from "../Confirmation";
+import done from "../../../assets/client/done.svg";
 
 const OfferCard = ({ offer }) => {
   const [isRejectDialogOpen, setIsRejectDialogOpen] = useState(false);
@@ -105,6 +106,7 @@ const OfferCard = ({ offer }) => {
         <Confirmation
           message="تمت عملية الرفض بنجاح"
           onTimeout={() => setShowConfirmation(false)}
+          image={done}
         />
       )}
     </>
