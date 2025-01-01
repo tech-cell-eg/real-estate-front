@@ -1,5 +1,5 @@
 import { Breadcrumb } from "flowbite-react";
-import PropertyCard from "../components/PropertyCard";
+import PropertyCard from "../components/cards/PropertyCard";
 
 function ClientHome() {
   return (

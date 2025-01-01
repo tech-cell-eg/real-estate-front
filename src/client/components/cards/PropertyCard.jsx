@@ -1,6 +1,6 @@
-import Button from "./Button";
-import cancel from "../../assets/client/cancel.png";
-import edit from "../../assets/client/edit.png";
+import Button from "../Button";
+import cancel from "../../../assets/client/cancel.png";
+import edit from "../../../assets/client/edit.png";
 
 const PropertyCard = () => {
   return (
