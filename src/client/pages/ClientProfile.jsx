@@ -20,6 +20,7 @@ const ClientProfile = () => {
               color: "black",
               backgroundColor: "lightblue",
               border: "1px solid",
+              padding: "25px",
             }}
           >
             تعديل معلومات الملف الشخصي
@@ -31,7 +32,7 @@ const ClientProfile = () => {
 
         <Accordion.Panel>
           <Accordion.Title
-            style={{ color: "black", backgroundColor: "lightblue" }}
+            style={{ color: "black", backgroundColor: "lightblue" ,padding: "25px",}}
           >
             تعديل كلمة المرور
           </Accordion.Title>
