@@ -4,6 +4,7 @@ import Dialog from "../components/Dialog";
 import { Breadcrumb } from "flowbite-react";
 import { Link } from "react-router-dom";
 import Confirmation from "../components/Confirmation";
+import done from "../../assets/client/done.svg";
 
 const OfferDetails = () => {
   const location = useLocation();
@@ -98,6 +99,7 @@ const OfferDetails = () => {
         <Confirmation
           message="تمت عملية الرفض بنجاح"
           onTimeout={() => setShowConfirmation(false)}
+          image={done}
         />
       )}
     </>
