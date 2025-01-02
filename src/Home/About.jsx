@@ -1,5 +1,3 @@
-import React from "react";
-
 const About = () => {
   return (
     <div className="px-4 py-10 bg-[#F7FBF9] text-center">
