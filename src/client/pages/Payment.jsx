@@ -7,7 +7,7 @@ const Payment = () => {
       <img
         src={paymentImage}
         alt="Payment Illustration"
-        className="w-[50%] h-auto"
+        className="w-[40%] h-auto"
       />
 
       <PaymentDetailsForm />

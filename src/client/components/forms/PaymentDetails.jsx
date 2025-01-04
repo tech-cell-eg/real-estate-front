@@ -1,7 +1,12 @@
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Button, Label, TextInput } from "flowbite-react";
+import Confirmation from "../Confirmation";
+import done from "../../../assets/client/done.svg";
 
 export const PaymentDetailsForm = () => {
+  const [showConfirmation, setShowConfirmation] = useState(false);
+
   const {
     register,
     handleSubmit,
@@ -10,6 +15,8 @@ export const PaymentDetailsForm = () => {
 
   const onSubmit = (data) => {
     console.log("Payment Submitted:", data);
+    setShowConfirmation(true);
+    register("");
   };
 
   return (
@@ -188,6 +195,13 @@ export const PaymentDetailsForm = () => {
       >
         Pay
       </Button>
+      {showConfirmation && (
+        <Confirmation
+          message="تمت عملية الدفع بنجاح"
+          onTimeout={() => setShowConfirmation(false)}
+          image={done}
+        />
+      )}
     </form>
   );
 };
