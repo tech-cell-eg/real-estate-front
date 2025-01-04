@@ -10,6 +10,8 @@ import Offers from "../pages/Offers";
 import OfferDetails from "../pages/OfferDetails";
 import AcceptedOfferDetails from "../pages/AcceptedOfferDetails";
 import Logout from "../pages/Logout";
+import Requests from "../pages/Requests";
+import Payment from "../pages/Payment";
 
 const clientRoute = {
   path: "/client",
@@ -32,8 +34,8 @@ const clientRoute = {
         { path: "accepted-offer-details", element: <AcceptedOfferDetails /> },
       ],
     },
-    { path: "requests", element: <div>Requests</div> },
-    { path: "payments", element: <div>Payments</div> },
+    { path: "requests", element: <Requests/> },
+    { path: "payments", element: <Payment/>},
     { path: "terms", element: <Terms /> },
     { path: "settings", element: <ClientProfile /> },
     { path: "logout", element: <Logout /> },

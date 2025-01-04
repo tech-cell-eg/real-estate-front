@@ -1,16 +1,15 @@
 import { useForm } from "react-hook-form";
 import { Button, Label, TextInput } from "flowbite-react";
 
-export const ChangePasswordForm = () => {
+export const PaymentDetailsForm = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
-    watch,
   } = useForm();
 
   const onSubmit = (data) => {
-    console.log("Password Changed:", data);
+    console.log("Payment Submitted:", data);
   };
 
   return (
@@ -23,12 +22,14 @@ export const ChangePasswordForm = () => {
         boxShadow: "0 1px 2px rgba(0, 0, 0, 0.05)",
         color: "#000",
         marginTop: "1rem",
+        width: "400px",
       }}
     >
+      {/* Name on Card */}
       <div style={{ marginBottom: "1rem" }}>
         <Label
-          htmlFor="currentPassword"
-          value="كلمة المرور الحالية"
+          htmlFor="name"
+          value="Name on Card"
           style={{
             color: "black",
             fontWeight: "500",
@@ -37,18 +38,17 @@ export const ChangePasswordForm = () => {
           }}
         />
         <TextInput
-          id="currentPassword"
-          type="password"
-          placeholder="********"
-          {...register("currentPassword", { required: "كلمة المرور مطلوبة" })}
+          id="name"
+          placeholder="Your card name"
+          {...register("name", { required: "Name on Card is required" })}
           className={`mt-1 ${
-            errors.currentPassword
+            errors.name
               ? "border-red-600 focus:ring-red-500"
               : "border-gray-300 focus:ring-orange-500"
           }`}
           style={{ backgroundColor: "white", color: "black" }}
         />
-        {errors.currentPassword && (
+        {errors.name && (
           <p
             style={{
               color: "#dc2626",
@@ -56,15 +56,15 @@ export const ChangePasswordForm = () => {
               marginTop: "0.25rem",
             }}
           >
-            {errors.currentPassword.message}
+            {errors.name.message}
           </p>
         )}
       </div>
 
       <div style={{ marginBottom: "1rem" }}>
         <Label
-          htmlFor="newPassword"
-          value="كلمة المرور الجديدة"
+          htmlFor="cardNumber"
+          value="Card Number"
           style={{
             color: "black",
             fontWeight: "500",
@@ -73,24 +73,23 @@ export const ChangePasswordForm = () => {
           }}
         />
         <TextInput
-          id="newPassword"
-          type="password"
-          placeholder="********"
-          {...register("newPassword", {
-            required: "كلمة المرور الجديدة مطلوبة",
-            minLength: {
-              value: 8,
-              message: "كلمة المرور يجب أن تكون 8 أحرف على الأقل",
+          id="cardNumber"
+          placeholder="1234 5678 9101 1213"
+          {...register("cardNumber", {
+            required: "Card Number is required",
+            pattern: {
+              value: /^\d{4}\s\d{4}\s\d{4}\s\d{4}$/,
+              message: "Enter a valid card number",
             },
           })}
           className={`mt-1 ${
-            errors.newPassword
+            errors.cardNumber
               ? "border-red-600 focus:ring-red-500"
               : "border-gray-300 focus:ring-orange-500"
           }`}
           style={{ backgroundColor: "white", color: "black" }}
         />
-        {errors.newPassword && (
+        {errors.cardNumber && (
           <p
             style={{
               color: "#dc2626",
@@ -98,15 +97,16 @@ export const ChangePasswordForm = () => {
               marginTop: "0.25rem",
             }}
           >
-            {errors.newPassword.message}
+            {errors.cardNumber.message}
           </p>
         )}
       </div>
 
+      {/* Expiration Date */}
       <div style={{ marginBottom: "1rem" }}>
         <Label
-          htmlFor="confirmPassword"
-          value="تأكيد كلمة المرور"
+          htmlFor="expirationDate"
+          value="Expiration Date"
           style={{
             color: "black",
             fontWeight: "500",
@@ -115,22 +115,19 @@ export const ChangePasswordForm = () => {
           }}
         />
         <TextInput
-          id="confirmPassword"
-          type="password"
-          placeholder="********"
-          {...register("confirmPassword", {
-            required: "يرجى تأكيد كلمة المرور",
-            validate: (value) =>
-              value === watch("newPassword") || "كلمات المرور غير متطابقة",
+          id="expirationDate"
+          placeholder="MM / YY"
+          {...register("expirationDate", {
+            required: "Expiration Date is required",
           })}
           className={`mt-1 ${
-            errors.confirmPassword
+            errors.expirationDate
               ? "border-red-600 focus:ring-red-500"
               : "border-gray-300 focus:ring-orange-500"
           }`}
-          style={{ backgroundColor: "white" , color: "black"}}
+          style={{ backgroundColor: "white", color: "black" }}
         />
-        {errors.confirmPassword && (
+        {errors.expirationDate && (
           <p
             style={{
               color: "#dc2626",
@@ -138,16 +135,58 @@ export const ChangePasswordForm = () => {
               marginTop: "0.25rem",
             }}
           >
-            {errors.confirmPassword.message}
+            {errors.expirationDate.message}
+          </p>
+        )}
+      </div>
+
+      {/* CVC */}
+      <div style={{ marginBottom: "1rem" }}>
+        <Label
+          htmlFor="cvc"
+          value="CVC"
+          style={{
+            color: "black",
+            fontWeight: "500",
+            marginBottom: "0.25rem",
+            display: "block",
+          }}
+        />
+        <TextInput
+          id="cvc"
+          placeholder="123"
+          {...register("cvc", {
+            required: "CVC is required",
+            pattern: {
+              value: /^\d{3}$/,
+              message: "Enter a valid CVC",
+            },
+          })}
+          className={`mt-1 ${
+            errors.cvc
+              ? "border-red-600 focus:ring-red-500"
+              : "border-gray-300 focus:ring-orange-500"
+          }`}
+          style={{ backgroundColor: "white", color: "black" }}
+        />
+        {errors.cvc && (
+          <p
+            style={{
+              color: "#dc2626",
+              fontSize: "0.875rem",
+              marginTop: "0.25rem",
+            }}
+          >
+            {errors.cvc.message}
           </p>
         )}
       </div>
 
       <Button
         type="submit"
-        className="w-full bg-gradient-to-r from-primary to-orange-900 hover:from-orange-900 hover:to-primary text-white font-medium rounded-md py-2"
+        className="w-full bg-primary cursor-pointer text-white font-medium rounded-md py-2"
       >
-        تعديل
+        Pay
       </Button>
     </form>
   );
