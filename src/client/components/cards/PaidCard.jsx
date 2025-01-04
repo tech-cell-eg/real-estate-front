@@ -1,14 +1,17 @@
-import { useState } from "react";
 import PropTypes from "prop-types";
-import RequestModal from "../RequestModal";
+import { useNavigate } from "react-router-dom";
 
-const RequestCard = ({ image, title, location, description, badge }) => {
-  const [isModalOpen, setModalOpen] = useState(false);
+const PaidCard = ({ image, title, location, description, badge }) => {
+  const navigate = useNavigate();
 
   return (
     <>
       <div
-        onClick={() => setModalOpen(true)}
+        onClick={() =>
+          navigate("/client/payment/payment-details", {
+            state: { title: title },
+          })
+        }
         className="relative w-[300px] h-[300px] rounded-lg overflow-hidden shadow-xl p-2 ml-5 bg-white transition-all duration-300 group hover:bg-gradient-to-b hover:from-[rgba(194,144,98,1)] hover:to-black cursor-pointer"
       >
         <div className="relative h-[50%]">
@@ -18,7 +21,7 @@ const RequestCard = ({ image, title, location, description, badge }) => {
             className="w-full h-full object-cover rounded shadow-md"
           />
           <span className="absolute top-3 left-3 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full">
-            {badge || "مقبول"}
+            {badge || "مدفوع"}
           </span>
         </div>
         <div className="mt-4">
@@ -33,21 +36,11 @@ const RequestCard = ({ image, title, location, description, badge }) => {
           </p>
         </div>
       </div>
-
-      {/* Modal Component */}
-      <RequestModal
-        isOpen={isModalOpen}
-        onClose={() => setModalOpen(false)}
-        image={image}
-        title={title}
-        location={location}
-        description={description}
-      />
     </>
   );
 };
 
-RequestCard.propTypes = {
+PaidCard.propTypes = {
   image: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   location: PropTypes.string.isRequired,
@@ -55,4 +48,4 @@ RequestCard.propTypes = {
   badge: PropTypes.string,
 };
 
-export default RequestCard;
+export default PaidCard;

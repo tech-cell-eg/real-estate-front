@@ -4,7 +4,7 @@ import { Button, Label, TextInput } from "flowbite-react";
 import Confirmation from "../Confirmation";
 import done from "../../../assets/client/done.svg";
 
-export const PaymentDetailsForm = () => {
+export const PaymentDataForm = () => {
   const [showConfirmation, setShowConfirmation] = useState(false);
 
   const {

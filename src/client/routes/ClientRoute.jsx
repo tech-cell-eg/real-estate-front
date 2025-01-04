@@ -12,6 +12,8 @@ import AcceptedOfferDetails from "../pages/AcceptedOfferDetails";
 import Logout from "../pages/Logout";
 import Requests from "../pages/Requests";
 import Payment from "../pages/Payment";
+import PaymentDetails from "../pages/PaymentDetails";
+import PaymentData from "../pages/PaymentData";
 
 const clientRoute = {
   path: "/client",
@@ -34,8 +36,15 @@ const clientRoute = {
         { path: "accepted-offer-details", element: <AcceptedOfferDetails /> },
       ],
     },
-    { path: "requests", element: <Requests/> },
-    { path: "payments", element: <Payment/>},
+    { path: "requests", element: <Requests /> },
+    {
+      path: "payment",
+      children: [
+        { index: true, element: <Payment /> },
+        { path: "payment-details", element: <PaymentDetails /> },
+        { path: "payment-data", element: <PaymentData/> },
+      ],
+    },
     { path: "terms", element: <Terms /> },
     { path: "settings", element: <ClientProfile /> },
     { path: "logout", element: <Logout /> },

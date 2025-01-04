@@ -1,17 +1,15 @@
-import paymentImage from "../../assets/client/payment.svg";
-import { PaymentDetailsForm } from "../components/forms/PaymentDetails";
+import PaidCard from "../components/cards/PaidCard";
 
 const Payment = () => {
   return (
-    <div className="flex justify-center items-center h-screen bg-gray-50">
-      <img
-        src={paymentImage}
-        alt="Payment Illustration"
-        className="w-[40%] h-auto"
+    <>
+      <PaidCard
+        image="https://newstart-eg.com/static/images/placeholder.jpg"
+        title="عقار آخر في الرياض"
+        location="الرياض"
+        description="تتكون من صالة ومجلس وثلاث غرف نوم ومطبخ وثلاث دورات مياه وتراس  مطل على الشارع  بمساحة 138م"
       />
-
-      <PaymentDetailsForm />
-    </div>
+    </>
   );
 };
 
