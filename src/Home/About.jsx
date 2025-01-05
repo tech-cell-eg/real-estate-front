@@ -1,6 +1,6 @@
 const About = () => {
   return (
-    <div className="px-4 py-10 bg-[#F7FBF9] text-center">
+    <div id="about" className="px-4 py-10 bg-[#F7FBF9] text-center">
       {/* Title Section */}
       <h1 className="text-3xl font-bold">
         <span className="text-[#464646]">ما هي منصة</span>{" "}

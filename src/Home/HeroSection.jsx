@@ -1,8 +1,26 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { BsFillPersonFill } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 const HeroSection = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Check if the user has scrolled at all
+      if (window.scrollY > 0) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -10,6 +28,7 @@ const HeroSection = () => {
 
   return (
     <div
+      id="home"
       className="relative h-screen bg-cover bg-center"
       style={{ backgroundImage: `url('./photos/Hero.jfif')` }}
     >
@@ -17,7 +36,13 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-gray-800 to-black opacity-90 z-0"></div>
 
       {/* Navbar */}
-      <nav className="fixed top-0 left-0 w-full bg-[rgba(209,232,226,0.2)] px-4 z-50">
+      <nav
+        className={`fixed top-0 left-0 w-full px-4 z-50 transition-colors duration-300 ${
+          isScrolled
+            ? "bg-white text-black shadow-md"
+            : "bg-[rgba(209,232,226,0.2)] text-white "
+        }`}
+      >
         <div className="container mx-auto flex items-center justify-between">
           {/* Logo on the right */}
           <img src="./photos/logo.png" alt="Logo" className="h-20 w-36" />
@@ -25,37 +50,46 @@ const HeroSection = () => {
           {/* Tabs in the middle */}
           <div className="hidden md:flex gap-8">
             <a
-              href="#about"
-              className="text-white hover:underline focus:underline focus:text-[rgba(194,144,98,1)]"
+              href="#home"
+              className={` hover:underline focus:underline focus:text-[rgba(194,144,98,1)] ${
+                isScrolled ? "text-black" : "text-white"
+              }`}
             >
               الرئيسية{" "}
             </a>
             <a
-              href="#contact"
-              className="text-white hover:underline focus:underline focus:text-[rgba(194,144,98,1)]"
+              href="#about"
+              className={` hover:underline focus:underline focus:text-[rgba(194,144,98,1)] ${
+                isScrolled ? "text-black" : "text-white"
+              }`}
             >
               من نحن
             </a>
             <a
-              href="#help"
-              className="text-white hover:underline focus:underline focus:text-[rgba(194,144,98,1)]"
+              href="#contact"
+              className={` hover:underline focus:underline focus:text-[rgba(194,144,98,1)] ${
+                isScrolled ? "text-black" : "text-white"
+              }`}
             >
               تواصل معنا
             </a>
             <a
-              href="#home"
-              className="text-white hover:underline focus:underline focus:text-[rgba(194,144,98,1)]"
+              href="#"
+              className={` hover:underline focus:underline focus:text-[rgba(194,144,98,1)] ${
+                isScrolled ? "text-black" : "text-white"
+              }`}
             >
               المساعدة
             </a>
           </div>
 
           {/* Button on the left */}
-          <button className="flex items-center justify-center gap-2 px-6 py-2 bg-[rgba(194,144,98,1)] text-white rounded-full hover:bg-opacity-80 transition">
-            {/* Icon */}
-            <BsFillPersonFill size={28} />
-            تسجيل دخول
-          </button>
+          <Link to="login">
+            <button className="flex items-center justify-center gap-2 px-6 py-2 bg-[rgba(194,144,98,1)] text-white rounded-full hover:bg-opacity-80 transition">
+              <BsFillPersonFill size={28} />
+              تسجيل دخول
+            </button>
+          </Link>
 
           {/* Burger menu for small screens */}
           <button
