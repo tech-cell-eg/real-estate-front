@@ -1,5 +1,6 @@
 import { AiFillBell } from "react-icons/ai";
 import { Link } from "react-router-dom";
+import Notification from "../Notification";
 
 const Layout = ({ children, sidebarTabs }) => {
   return (
@@ -22,9 +23,10 @@ const Layout = ({ children, sidebarTabs }) => {
           <button className="relative">
             <span className="material-icons text-white">شركة عقاركم</span>
           </button>
-
-          <div className=" text-2xl text-[rgba(194,144,98,1)]">
-            <AiFillBell />
+          <div className="flex items-center gap-4">
+            <Notification
+              label={<AiFillBell />}
+            />
           </div>
         </div>
 
