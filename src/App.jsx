@@ -15,6 +15,7 @@ import Details from "./Company/Pages/Details/Details";
 import Mybalance from "./Company/Pages/Mybalance/Mybalance";
 import Paid from "./Company/Pages/paid/paid";
 import Team from "./Company/Pages/Team/Team";
+import Seting from "./Company/Pages/Setting/Seting";
 
 
 
@@ -32,7 +33,8 @@ export default function App() {
       {path: "details", element: <Details />},
       {path: "mybalance", element: <Mybalance />},
       {path: "paid", element: <Paid />},
-      {path: "team", element: <Team/>}
+      {path: "team", element: <Team/>},
+      {path:"setting", element: <Seting/>},
      
         
         // { index: true, element: <Home /> },

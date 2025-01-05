@@ -26,7 +26,7 @@ export default function AddArtist() {
         }
   return (
     <div className='container-main'>
-        <div className='flex flex-col items-center justify-center rounded-lg shadow-xl px-6 py-6 m-6 border border-gray-300'>
+        <div className='flex flex-col items-center justify-center rounded-lg shadow-xl px-6 py-6 my-6 border border-gray-300'>
         <form className='w-1/2  max-[650px]:w-full space-y-4'>
         <div className="relative">
   {/* Label */}

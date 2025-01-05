@@ -13,7 +13,7 @@ export default function Team() {
   return (
     <>
       <section className=" flex flex-col py-8 relative min-h-screen">
-      <div className="container-main">
+      <div className="">
       <div className="flex flex-col items-center mb-4">
           <div className="bg-primary p-4 rounded-full w-fit">
             <FaRegUserCircle className="text-4xl text-white" />
@@ -53,7 +53,7 @@ export default function Team() {
         {activeTab === "previewer" && <AddPreviewer />}
 
         {/* Team */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 container-main">
           <TeamCard setShowEdite={setShowEdite} />
         </div>
 
