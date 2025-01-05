@@ -12,6 +12,10 @@ import clientRoute from "./client/routes/ClientRoute";
 // ! You can find an example for routing for your flow in company role
 import TermsAndCondattions from "./Company/Pages/TermsAndCondation/TermsAndCondattions";
 import Details from "./Company/Pages/Details/Details";
+import Mybalance from "./Company/Pages/Mybalance/Mybalance";
+import Paid from "./Company/Pages/paid/paid";
+import Team from "./Company/Pages/Team/Team";
+
 
 
 
@@ -24,6 +28,11 @@ export default function App() {
         // { path: "login", element: <Login /> },
         // { path: "register", element: <Register /> },
       { path: "/", element: <Home /> },
+      {path: "terms", element: <TermsAndCondattions />},
+      {path: "details", element: <Details />},
+      {path: "mybalance", element: <Mybalance />},
+      {path: "paid", element: <Paid />},
+      {path: "team", element: <Team/>}
      
         
         // { index: true, element: <Home /> },
@@ -45,8 +54,7 @@ export default function App() {
       children: [
         //! Create a nested routes for your role
            
-                {
-          path: "settings", //! Name for the path
+                { path: "settings", //! Name for the path
           element: (
             <ProtectedRoute>
               <RoleProtectedRoute allowedRoles={["company"]}>
@@ -55,7 +63,8 @@ export default function App() {
               </RoleProtectedRoute>
             </ProtectedRoute>
           ),
-        },
+        }, 
+       
        
       ],
       errorElement: <ErrorElement />, //! and finally the error element

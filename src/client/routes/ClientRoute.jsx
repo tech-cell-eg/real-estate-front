@@ -1,7 +1,15 @@
 import ProtectedRoute from "../../navigation/ProtectedRoute";
-import RoleProtectedRoute from "../../navigation/RoleProtectedRoute";
+// import RoleProtectedRoute from "../../navigation/RoleProtectedRoute";
 import Index from "../pages/Index";
 import ErrorElement from "../../UI/errors/ErrorElement";
+import ClientHome from "../pages/ClientHome";
+import AddProperty from "../pages/AddProperty";
+import Terms from "../pages/Terms";
+import ClientProfile from "../pages/ClientProfile";
+import Offers from "../pages/Offers";
+import OfferDetails from "../pages/OfferDetails";
+import AcceptedOfferDetails from "../pages/AcceptedOfferDetails";
+import Logout from "../pages/Logout";
 
 const clientRoute = {
   path: "/client",
@@ -14,14 +22,21 @@ const clientRoute = {
   ),
   errorElement: <ErrorElement />,
   children: [
-    { index: true, element: <div>Welcome Client</div> },
-    { path: "add-property", element: <div>Add Property</div> },
-    { path: "offers", element: <div>Offers</div> },
+    { index: true, element: <ClientHome /> },
+    { path: "add-property", element: <AddProperty /> },
+    {
+      path: "offers",
+      children: [
+        { index: true, element: <Offers /> },
+        { path: "details", element: <OfferDetails /> },
+        { path: "accepted-offer-details", element: <AcceptedOfferDetails /> },
+      ],
+    },
     { path: "requests", element: <div>Requests</div> },
     { path: "payments", element: <div>Payments</div> },
-    { path: "terms", element: <div>Terms and Conditions</div> },
-    { path: "settings", element: <div>Settings</div> },
-    { path: "logout", element: <div>Logout</div> },
+    { path: "terms", element: <Terms /> },
+    { path: "settings", element: <ClientProfile /> },
+    { path: "logout", element: <Logout /> },
   ],
 };
 
