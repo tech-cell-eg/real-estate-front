@@ -9,8 +9,10 @@ import Home from "./Home/Home";
 import CompanyHome from "./Company/Pages/Home/Home";
 import clientRoute from "./client/routes/ClientRoute";
 import Login from "./Auth/components/Login";
-
-// ! You can find an example for routing for your flow in company role
+import Register from "./Auth/components/Register";
+import CustomerRegister from "./Auth/components/CustomerRegister";
+import CompanyRegister from "./Auth/components/CompanyRegister";
+import InspectorRegister from "./Auth/components/InspectorRegister";
 import TermsAndCondattions from "./Company/Pages/TermsAndCondation/TermsAndCondattions";
 import Details from "./Company/Pages/Details/Details";
 import Mybalance from "./Company/Pages/Mybalance/Mybalance";
@@ -28,55 +30,39 @@ export default function App() {
       children: [
         { index: true, element: <Home /> },
         { path: "login", element: <Login /> },
-        // { path: "register", element: <Register /> },
-      { path: "/", element: <Home /> },
+        { path: "register", element: <Register /> },
+        { path: "customerRegister", element: <CustomerRegister /> },
+        { path: "evaluationCompanyRegister", element: <CompanyRegister /> },
+        { path: "inspectorRegister", element: <InspectorRegister /> },  
+      ],
+      errorElement: <ErrorElement />,
+    },
+    clientRoute,
+    {
+      path: "/company",
+      element: (
+        <ProtectedRoute>
+          {/* <RoleProtectedRoute allowedRoles={["company"]}> */}
+            <CompanyHome />
+          {/* </RoleProtectedRoute> */}
+        </ProtectedRoute>
+      ),
+      children: [
       {path: "terms", element: <TermsAndCondattions />},
       {path: "details", element: <Details />},
       {path: "mybalance", element: <Mybalance />},
       {path: "paid", element: <Paid />},
       {path: "team", element: <Team/>},
       {path:"setting", element: <Seting/>},
-     
-        
-        // { index: true, element: <Home /> },
+ 
       ],
-      errorElement: <ErrorElement />,
-    },
-    clientRoute,
-    {
-      //! Here is the main route of the role
-      path: "/company",
-      element: (
-        <ProtectedRoute>
-          {/* <RoleProtectedRoute allowedRoles={["company"]}> //! We will uncommented this line after creating the role */}
-            <CompanyHome />
-           
-          {/* </RoleProtectedRoute> */}
-        </ProtectedRoute>
-      ),
-      children: [
-        //! Create a nested routes for your role
-           
-                { path: "settings", //! Name for the path
-          element: (
-            <ProtectedRoute>
-              <RoleProtectedRoute allowedRoles={["company"]}>
-                {/* Here is the element of the path */}
-               
-              </RoleProtectedRoute>
-            </ProtectedRoute>
-          ),
-        }, 
-       
-       
-      ],
-      errorElement: <ErrorElement />, //! and finally the error element
+      errorElement: <ErrorElement />, 
     },
     {
       path: "/reviewer",
       element: (
         <ProtectedRoute>
-          <RoleProtectedRoute allowedRoles={["reviewer"]}>
+      <RoleProtectedRoute allowedRoles={["reviewer"]}>
             {/* <ReviewerDashboard /> */}
           </RoleProtectedRoute>
         </ProtectedRoute>
