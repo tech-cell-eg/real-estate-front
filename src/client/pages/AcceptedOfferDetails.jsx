@@ -44,7 +44,7 @@ const AcceptedOfferDetails = () => {
 };
 
 AcceptedOfferDetails.propTypes = {
-  companyName: PropTypes.string.isRequired,
+  companyName: PropTypes.string,
 };
 
 export default AcceptedOfferDetails;
