@@ -39,7 +39,7 @@ export const EditProfileForm = () => {
               ? "border-red-600 focus:ring-red-500"
               : "border-gray-300 focus:ring-orange-500"
           }`}
-          style={{backgroundColor: "white"}}
+          style={{backgroundColor: "white" , color: "black"}}
         />
         {errors.username && (
           <p style={{ color: "#dc2626", fontSize: "0.875rem", marginTop: "0.25rem" }}>
@@ -70,7 +70,7 @@ export const EditProfileForm = () => {
               ? "border-red-600 focus:ring-red-500"
               : "border-gray-300 focus:ring-orange-500"
           }`}
-          style={{backgroundColor: "white"}}
+          style={{backgroundColor: "white", color: "black"}}
         />
         {errors.email && (
           <p style={{ color: "#dc2626", fontSize: "0.875rem", marginTop: "0.25rem" }}>
@@ -101,7 +101,7 @@ export const EditProfileForm = () => {
               ? "border-red-600 focus:ring-red-500"
               : "border-gray-300 focus:ring-orange-500"
           }`}
-          style={{backgroundColor: "white"}}
+          style={{backgroundColor: "white", color: "black"}}
         />
         {errors.phone && (
           <p style={{ color: "#dc2626", fontSize: "0.875rem", marginTop: "0.25rem" }}>
@@ -125,7 +125,7 @@ export const EditProfileForm = () => {
               ? "border-red-600 focus:ring-red-500"
               : "border-gray-300 focus:ring-orange-500"
           }`}
-          style={{backgroundColor: "white"}}
+          style={{backgroundColor: "white", color: "black"}}
         />
         {errors.city && (
           <p style={{ color: "#dc2626", fontSize: "0.875rem", marginTop: "0.25rem" }}>

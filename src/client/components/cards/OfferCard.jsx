@@ -63,7 +63,7 @@ const OfferCard = ({ offer }) => {
         <p className="text-black text-s font-bold leading-6 mb-4 line-clamp-1">
           {offer.address}
         </p>
-        <p className="text-gray-600 text-sm leading-6 line-clamp-3 mb-4 line-clamp-1">
+        <p className="text-gray-600 text-sm leading-6 mb-4 line-clamp-1">
           {offer.description}
         </p>
         <button

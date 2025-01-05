@@ -25,13 +25,13 @@ const AcceptedOfferDetails = () => {
       <div className="w-[90%]  bg-white shadow-md rounded-lg p-6">
         <h2 className="text-2xl text-primary font-bold mb-4">{companyName}</h2>
         <p className="text-black font-bold mb-4">
-          اهلاً بك نحن {companyName} للعقارات يمكنك الأطلاع علي ملف السيرة الذاتية
-          الخاص بنا.
+          اهلاً بك نحن {companyName} للعقارات يمكنك الأطلاع علي ملف السيرة
+          الذاتية الخاص بنا.
         </p>
 
         <div className="bg-[#f2f8f6] flex w-[50%] rounded p-4 items-center">
           <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRX_GpPqQvSDxumo7fLDDhX7r3i008KwRgVOg&s"
+            src="/inspector.png"
             alt="Inspector Image"
             className="w-20 h-20 rounded-full mr-4 object-contain"
           />
@@ -44,7 +44,7 @@ const AcceptedOfferDetails = () => {
 };
 
 AcceptedOfferDetails.propTypes = {
-  companyName: PropTypes.string.isRequired,
+  companyName: PropTypes.string,
 };
 
 export default AcceptedOfferDetails;

@@ -46,7 +46,7 @@ export const ChangePasswordForm = () => {
               ? "border-red-600 focus:ring-red-500"
               : "border-gray-300 focus:ring-orange-500"
           }`}
-          style={{ backgroundColor: "white" }}
+          style={{ backgroundColor: "white", color: "black" }}
         />
         {errors.currentPassword && (
           <p
@@ -88,7 +88,7 @@ export const ChangePasswordForm = () => {
               ? "border-red-600 focus:ring-red-500"
               : "border-gray-300 focus:ring-orange-500"
           }`}
-          style={{ backgroundColor: "white" }}
+          style={{ backgroundColor: "white", color: "black" }}
         />
         {errors.newPassword && (
           <p
@@ -128,7 +128,7 @@ export const ChangePasswordForm = () => {
               ? "border-red-600 focus:ring-red-500"
               : "border-gray-300 focus:ring-orange-500"
           }`}
-          style={{ backgroundColor: "white" }}
+          style={{ backgroundColor: "white" , color: "black"}}
         />
         {errors.confirmPassword && (
           <p
