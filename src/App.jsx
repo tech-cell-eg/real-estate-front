@@ -10,6 +10,14 @@ import CompanyHome from "./Company/Pages/Home/Home";
 import clientRoute from "./client/routes/ClientRoute";
 
 // ! You can find an example for routing for your flow in company role
+import TermsAndCondattions from "./Company/Pages/TermsAndCondation/TermsAndCondattions";
+import Details from "./Company/Pages/Details/Details";
+import Mybalance from "./Company/Pages/Mybalance/Mybalance";
+import Paid from "./Company/Pages/paid/paid";
+import Team from "./Company/Pages/Team/Team";
+
+
+
 
 export default function App() {
   const routes = createBrowserRouter([
@@ -19,6 +27,15 @@ export default function App() {
         { index: true, element: <Home /> },
         // { path: "login", element: <Login /> },
         // { path: "register", element: <Register /> },
+      { path: "/", element: <Home /> },
+      {path: "terms", element: <TermsAndCondattions />},
+      {path: "details", element: <Details />},
+      {path: "mybalance", element: <Mybalance />},
+      {path: "paid", element: <Paid />},
+      {path: "team", element: <Team/>}
+     
+        
+        // { index: true, element: <Home /> },
       ],
       errorElement: <ErrorElement />,
     },
@@ -29,22 +46,26 @@ export default function App() {
       element: (
         <ProtectedRoute>
           {/* <RoleProtectedRoute allowedRoles={["company"]}> //! We will uncommented this line after creating the role */}
-          <CompanyHome />
+            <CompanyHome />
+           
           {/* </RoleProtectedRoute> */}
         </ProtectedRoute>
       ),
       children: [
         //! Create a nested routes for your role
-        {
-          path: "settings", //! Name for the path
+           
+                { path: "settings", //! Name for the path
           element: (
             <ProtectedRoute>
               <RoleProtectedRoute allowedRoles={["company"]}>
                 {/* Here is the element of the path */}
+               
               </RoleProtectedRoute>
             </ProtectedRoute>
           ),
-        },
+        }, 
+       
+       
       ],
       errorElement: <ErrorElement />, //! and finally the error element
     },
