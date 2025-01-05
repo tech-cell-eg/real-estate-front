@@ -1,8 +1,9 @@
 import React from 'react'
 import {  FaUserCircle } from 'react-icons/fa';
+import { IoMdClose } from 'react-icons/io';
 import { MdOutlineEmail } from 'react-icons/md';
 
-export default function EditePoth() {
+export default function EditePoth({setShowEdite}) {
 
   return ( 
     <div className='w-full h-full bg-black/50 absolute top-0 left-0 right-0 bottom-0 ' >
@@ -49,6 +50,8 @@ export default function EditePoth() {
      />
    </div>
    <button  type='submit' className='bg-primary text-white py-2 px-4 rounded-full w-full'>ارسال</button>
+   <div className='absolute top-2 right-4 text-2xl cursor-pointer' on onClick={()=>setShowEdite(false)}><IoMdClose/>
+   </div>
    </form>
 
 </div>
