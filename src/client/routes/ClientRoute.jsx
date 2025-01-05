@@ -6,14 +6,14 @@ import ClientHome from "../pages/ClientHome";
 import AddProperty from "../pages/AddProperty";
 import Terms from "../pages/Terms";
 import ClientProfile from "../pages/ClientProfile";
-import Offers from "../pages/Offers";
-import OfferDetails from "../pages/OfferDetails";
-import AcceptedOfferDetails from "../pages/AcceptedOfferDetails";
+import Offers from "../pages/offers/Offers";
+import OfferDetails from "../pages/offers/OfferDetails";
+import AcceptedOfferDetails from "../pages/offers/AcceptedOfferDetails";
 import Logout from "../pages/Logout";
 import Requests from "../pages/Requests";
-import Payment from "../pages/Payment";
-import PaymentDetails from "../pages/PaymentDetails";
-import PaymentData from "../pages/PaymentData";
+import Payment from "../pages/payments/Payment";
+import PaymentDetails from "../pages/payments/PaymentDetails";
+import PaymentData from "../pages/payments/PaymentData";
 
 const clientRoute = {
   path: "/client",
@@ -42,7 +42,7 @@ const clientRoute = {
       children: [
         { index: true, element: <Payment /> },
         { path: "payment-details", element: <PaymentDetails /> },
-        { path: "payment-data", element: <PaymentData/> },
+        { path: "payment-data", element: <PaymentData /> },
       ],
     },
     { path: "terms", element: <Terms /> },

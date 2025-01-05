@@ -1,5 +1,5 @@
 import { Button } from "flowbite-react";
-import paymentImage from "../../assets/client/payment.svg";
+import paymentImage from "../../../assets/client/payment.svg";
 import { useLocation, useNavigate } from "react-router-dom";
 
 const PaymentDetails = () => {

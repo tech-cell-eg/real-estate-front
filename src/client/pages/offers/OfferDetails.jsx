@@ -1,10 +1,10 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
-import Dialog from "../components/Dialog";
+import Dialog from "../../components/Dialog";
 import { Breadcrumb } from "flowbite-react";
 import { Link } from "react-router-dom";
-import Confirmation from "../components/Confirmation";
-import done from "../../assets/client/done.svg";
+import Confirmation from "../../components/Confirmation";
+import done from "../../../assets/client/done.svg";
 
 const OfferDetails = () => {
   const location = useLocation();
