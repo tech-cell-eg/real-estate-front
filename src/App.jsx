@@ -20,9 +20,6 @@ import Paid from "./Company/Pages/paid/paid";
 import Team from "./Company/Pages/Team/Team";
 import Seting from "./Company/Pages/Setting/Seting";
 
-
-
-
 export default function App() {
   const routes = createBrowserRouter([
     {
@@ -33,36 +30,36 @@ export default function App() {
         { path: "register", element: <Register /> },
         { path: "customerRegister", element: <CustomerRegister /> },
         { path: "evaluationCompanyRegister", element: <CompanyRegister /> },
-        { path: "inspectorRegister", element: <InspectorRegister /> },  
+        { path: "inspectorRegister", element: <InspectorRegister /> },
       ],
       errorElement: <ErrorElement />,
     },
     clientRoute,
     {
-      path: "/company",
+      path: "company",
       element: (
         <ProtectedRoute>
           {/* <RoleProtectedRoute allowedRoles={["company"]}> */}
-            <CompanyHome />
+          <CompanyHome />
           {/* </RoleProtectedRoute> */}
         </ProtectedRoute>
       ),
+      errorElement: <ErrorElement />,
       children: [
-      {path: "terms", element: <TermsAndCondattions />},
-      {path: "details", element: <Details />},
-      {path: "mybalance", element: <Mybalance />},
-      {path: "paid", element: <Paid />},
-      {path: "team", element: <Team/>},
-      {path:"setting", element: <Seting/>},
- 
+        { index: true, element: <CompanyHome /> },
+        { path: "terms", element: <TermsAndCondattions /> },
+        { path: "details", element: <Details /> },
+        { path: "mybalance", element: <Mybalance /> },
+        { path: "paid", element: <Paid /> },
+        { path: "team", element: <Team /> },
+        { path: "setting", element: <Seting /> },
       ],
-      errorElement: <ErrorElement />, 
     },
     {
       path: "/reviewer",
       element: (
         <ProtectedRoute>
-      <RoleProtectedRoute allowedRoles={["reviewer"]}>
+          <RoleProtectedRoute allowedRoles={["reviewer"]}>
             {/* <ReviewerDashboard /> */}
           </RoleProtectedRoute>
         </ProtectedRoute>

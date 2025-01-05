@@ -28,7 +28,12 @@ export const EditProfileForm = () => {
         <Label
           htmlFor="username"
           value="اسم المستخدم"
-          style={{ color: "black", fontWeight: "500", marginBottom: "0.25rem", display: "block" }}
+          style={{
+            color: "black",
+            fontWeight: "500",
+            marginBottom: "0.25rem",
+            display: "block",
+          }}
         />
         <TextInput
           id="username"
@@ -39,10 +44,16 @@ export const EditProfileForm = () => {
               ? "border-red-600 focus:ring-red-500"
               : "border-gray-300 focus:ring-orange-500"
           }`}
-          style={{backgroundColor: "white" , color: "black"}}
+          style={{ backgroundColor: "white", color: "black" }}
         />
         {errors.username && (
-          <p style={{ color: "#dc2626", fontSize: "0.875rem", marginTop: "0.25rem" }}>
+          <p
+            style={{
+              color: "#dc2626",
+              fontSize: "0.875rem",
+              marginTop: "0.25rem",
+            }}
+          >
             {errors.username.message}
           </p>
         )}
@@ -52,7 +63,12 @@ export const EditProfileForm = () => {
         <Label
           htmlFor="email"
           value="البريد الإلكتروني"
-          style={{ color: "black", fontWeight: "500", marginBottom: "0.25rem", display: "block" }}
+          style={{
+            color: "black",
+            fontWeight: "500",
+            marginBottom: "0.25rem",
+            display: "block",
+          }}
         />
         <TextInput
           id="email"
@@ -70,10 +86,16 @@ export const EditProfileForm = () => {
               ? "border-red-600 focus:ring-red-500"
               : "border-gray-300 focus:ring-orange-500"
           }`}
-          style={{backgroundColor: "white", color: "black"}}
+          style={{ backgroundColor: "white", color: "black" }}
         />
         {errors.email && (
-          <p style={{ color: "#dc2626", fontSize: "0.875rem", marginTop: "0.25rem" }}>
+          <p
+            style={{
+              color: "#dc2626",
+              fontSize: "0.875rem",
+              marginTop: "0.25rem",
+            }}
+          >
             {errors.email.message}
           </p>
         )}
@@ -83,7 +105,12 @@ export const EditProfileForm = () => {
         <Label
           htmlFor="phone"
           value="رقم الجوال"
-          style={{ color: "black", fontWeight: "500", marginBottom: "0.25rem", display: "block" }}
+          style={{
+            color: "black",
+            fontWeight: "500",
+            marginBottom: "0.25rem",
+            display: "block",
+          }}
         />
         <TextInput
           id="phone"
@@ -101,10 +128,16 @@ export const EditProfileForm = () => {
               ? "border-red-600 focus:ring-red-500"
               : "border-gray-300 focus:ring-orange-500"
           }`}
-          style={{backgroundColor: "white", color: "black"}}
+          style={{ backgroundColor: "white", color: "black" }}
         />
         {errors.phone && (
-          <p style={{ color: "#dc2626", fontSize: "0.875rem", marginTop: "0.25rem" }}>
+          <p
+            style={{
+              color: "#dc2626",
+              fontSize: "0.875rem",
+              marginTop: "0.25rem",
+            }}
+          >
             {errors.phone.message}
           </p>
         )}
@@ -114,7 +147,12 @@ export const EditProfileForm = () => {
         <Label
           htmlFor="city"
           value="اختر مدينة"
-          style={{ color: "black", fontWeight: "500", marginBottom: "0.25rem", display: "block" }}
+          style={{
+            color: "black",
+            fontWeight: "500",
+            marginBottom: "0.25rem",
+            display: "block",
+          }}
         />
         <TextInput
           id="city"
@@ -125,15 +163,20 @@ export const EditProfileForm = () => {
               ? "border-red-600 focus:ring-red-500"
               : "border-gray-300 focus:ring-orange-500"
           }`}
-          style={{backgroundColor: "white", color: "black"}}
+          style={{ backgroundColor: "white", color: "black" }}
         />
         {errors.city && (
-          <p style={{ color: "#dc2626", fontSize: "0.875rem", marginTop: "0.25rem" }}>
+          <p
+            style={{
+              color: "#dc2626",
+              fontSize: "0.875rem",
+              marginTop: "0.25rem",
+            }}
+          >
             {errors.city.message}
           </p>
         )}
       </div>
-
 
       <Button
         type="submit"
