@@ -1,7 +1,9 @@
 import React from 'react'
 import { FaUserCircle } from 'react-icons/fa'
+import { useNavigate } from 'react-router-dom'
 
 export default function ChooseAuditor() {
+    const navigate = useNavigate()
   return (
      <div className='w-full h-full bg-black/50 absolute top-0 left-0 right-0 bottom-0 ' >
          <div className='w-[35%] max-[660px]:w-[85%] max-[1260px]:w-[50%]  max-[800px]:w-[75%] rounded-lg bg-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-8 space-y-4 text-center '>
@@ -28,7 +30,7 @@ export default function ChooseAuditor() {
          <p>رسوم المعاينه : <span className='text-primary'>500 ريال</span></p>
          <div className='flex gap-4'>
              <button className='btn-main bg-gradient-to-l from-[black] to-primary w-fit px-10 rounded-xl ' >اختيار</button>
-             <button className='btn-main bg-gradient-to-l from-[black] to-primary w-fit px-10 rounded-xl '>مشاهده الحساب</button>
+             <button className='btn-main bg-gradient-to-l from-[black] to-primary w-fit px-10 rounded-xl '  onClick={() => navigate('/company/projects/profile')}>مشاهده الحساب</button>
      
          </div>
         </div>
