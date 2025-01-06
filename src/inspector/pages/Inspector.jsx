@@ -1,5 +1,5 @@
 import React from 'react'
-import Layout from "../../Home/Layout"
+import Layout from "../../UI/layout/Layout"
 function Inspector() {
   //  const sidebarTabs = [
   //     { label: "الرئيسية", link: "", icon: <FaHome /> },
