@@ -4,7 +4,7 @@ import Notification from "../Notification";
 
 const Layout = ({ children, sidebarTabs }) => {
   return (
-    <div className="min-h-screen flex flex-col bg-gray-100">
+    <div className="min-h-screen flex flex-col ">
       {/* Navbar */}
       <nav
         className="shadow-md px-6 py-4 flex items-center justify-between text-right"
