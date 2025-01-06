@@ -84,20 +84,20 @@ export default function Details() {
 
 <div className='md:flex space-y-4 md:space-y-0 gap-6 justify-between mt-4'>
 <div className='md:w-1/2'>
-<Link to={"#"} className='py-2 px-6 text-center rounded inline-block w-full  bg-[#D1E8E2]'>اختيار فريق</Link>
+<Link to={"/company/projects/chooseTeam"} className='py-2 px-6 text-center rounded inline-block w-full  bg-[#D1E8E2]'>اختيار فريق</Link>
 </div>
 
 <div className='md:w-1/2'>
-  <Link to={"#"} className='py-2 px-6 text-center rounded inline-block w-full  bg-[#D1E8E2]'>التعليقات </Link></div>
+  <Link to={"/company/projects/comments"} className='py-2 px-6 text-center rounded inline-block w-full  bg-[#D1E8E2]'>التعليقات </Link></div>
 </div>
 
 <div className='md:flex space-y-4 md:space-y-0 gap-6 justify-between mt-4'>
 <div className='md:w-1/2'>
-<Link to={"#"} className='py-2 px-6 text-center rounded inline-block w-full  bg-[#D1E8E2]'>تقارير الفريق</Link>
+<Link to={"/company/projects/TeamReport"} className='py-2 px-6 text-center rounded inline-block w-full  bg-[#D1E8E2]'>تقارير الفريق</Link>
 </div>
 
 <div className='md:w-1/2'>
-<Link to={"#"} className='py-2 px-6 text-center rounded inline-block w-full  bg-[#D1E8E2]'>كتابه التقييم</Link>
+<Link to={"/company/projects/companyReport"} className='py-2 px-6 text-center rounded inline-block w-full  bg-[#D1E8E2]'>كتابه التقييم</Link>
 </div>
 </div>
 
