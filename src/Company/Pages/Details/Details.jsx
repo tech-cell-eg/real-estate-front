@@ -5,12 +5,7 @@ import { Link } from 'react-router-dom'
 export default function Details() {
   return <>
   <section className='w-full space-y-4 py-6 '>
-<div className='flex items-center space-x-2 text-xl max-[391px]:text-sm text-primary '>
-  <p>المشاريع</p>
-    <p><IoIosArrowBack className='text-2xl inline-block' />عقارات </p>
-    <p><IoIosArrowBack className='text-2xl  inline-block' />تفاصيل</p>
-   
-</div>
+
 <div className=' text-xl font-bold'>شقة للتمليك في شارع السند ، حي النرجس ، الرياض ، امارة منطقة الرياض</div>
 
 <div className='grid grid-cols-12 rounded-xl gap-2 overflow-hidden'>
