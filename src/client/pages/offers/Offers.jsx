@@ -1,5 +1,5 @@
-import AcceptedOfferCard from "../components/cards/AcceptedOfferCard";
-import OfferCard from "../components/cards/OfferCard";
+import AcceptedOfferCard from "../../components/cards/AcceptedOfferCard";
+import OfferCard from "../../components/cards/OfferCard";
 
 const offers = [
   {

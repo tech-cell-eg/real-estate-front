@@ -1,4 +1,4 @@
-import PaidCard from "../components/cards/PaidCard";
+import PaidCard from "../../components/cards/PaidCard";
 
 const Payment = () => {
   return (
