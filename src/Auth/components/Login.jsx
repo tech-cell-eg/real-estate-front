@@ -1,13 +1,6 @@
 import { useState } from "react";
 import { BsEnvelope } from "react-icons/bs";
-import {
-  FaArrowLeft,
-  FaArrowRight,
-  FaEnvelope,
-  FaLock,
-  FaEye,
-  FaEyeSlash,
-} from "react-icons/fa";
+import { FaArrowLeft, FaArrowRight, FaEye, FaEyeSlash } from "react-icons/fa";
 import { SlLock } from "react-icons/sl";
 import { Link } from "react-router-dom";
 
@@ -41,7 +34,7 @@ function Login() {
   };
 
   return (
-    <div className="flex flex-col lg:flex-row h-screen">
+    <div className="flex flex-col-reverse lg:flex-row h-screen overflow-y-auto">
       {/* Right Part */}
       <div className="w-full lg:w-2/5 bg-white p-8 flex flex-col items-start justify-center">
         <img
@@ -119,12 +112,14 @@ function Login() {
             ليس لديك حساب!
           </h1>
           <p className="text-2xl mb-8">يمكنك تسجيل بياناتك وإنشاء حساب الآن</p>
-          <button className="bg-[#C29062] text-white py-2 px-8 rounded-full flex gap-2 items-center mx-auto">
-            <div>
-              <FaArrowRight />
-            </div>
-            <div>تسجيل</div>
-          </button>
+          <Link to="/register">
+            <button className="bg-[#C29062] text-white py-2 px-8 rounded-full flex gap-2 items-center mx-auto">
+              <div>
+                <FaArrowRight />
+              </div>
+              <div>تسجيل</div>
+            </button>
+          </Link>
         </div>
       </div>
     </div>

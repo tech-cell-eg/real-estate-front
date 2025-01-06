@@ -9,6 +9,10 @@ import Home from "./Home/Home";
 import CompanyHome from "./Company/Pages/Home/Home";
 import clientRoute from "./client/routes/ClientRoute";
 import Login from "./Auth/components/Login";
+import Register from "./Auth/components/Register";
+import CustomerRegister from "./Auth/components/CustomerRegister";
+import CompanyRegister from "./Auth/components/CompanyRegister";
+import InspectorRegister from "./Auth/components/InspectorRegister";
 
 // ! You can find an example for routing for your flow in company role
 
@@ -19,7 +23,10 @@ export default function App() {
       children: [
         { index: true, element: <Home /> },
         { path: "login", element: <Login /> },
-        // { path: "register", element: <Register /> },
+        { path: "register", element: <Register /> },
+        { path: "customerRegister", element: <CustomerRegister /> },
+        { path: "evaluationCompanyRegister", element: <CompanyRegister /> },
+        { path: "inspectorRegister", element: <InspectorRegister /> },
       ],
       errorElement: <ErrorElement />,
     },
