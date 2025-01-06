@@ -8,6 +8,7 @@ import "./App.css";
 import Home from "./Home/Home";
 import CompanyHome from "./Company/Pages/Home/Home";
 import CLientHome from "./client/pages/ClientHome";
+import Inspector from "./inspector/pages/Inspector";
 
 // ! You can find an example for routing for your flow in company role
 
@@ -27,7 +28,7 @@ export default function App() {
       element: (
         <ProtectedRoute>
           {/* <RoleProtectedRoute allowedRoles={["client"]}> */}
-           <CLientHome />
+          <CLientHome />
           {/* </RoleProtectedRoute> */}
         </ProtectedRoute>
       ),
@@ -39,7 +40,7 @@ export default function App() {
       element: (
         <ProtectedRoute>
           {/* <RoleProtectedRoute allowedRoles={["company"]}> //! We will uncommented this line after creating the role */}
-            <CompanyHome />
+          <CompanyHome />
           {/* </RoleProtectedRoute> */}
         </ProtectedRoute>
       ),
@@ -75,6 +76,7 @@ export default function App() {
         <ProtectedRoute>
           <RoleProtectedRoute allowedRoles={["inspector"]}>
             {/* <InspectorDashboard /> */}
+            <Inspector />
           </RoleProtectedRoute>
         </ProtectedRoute>
       ),
