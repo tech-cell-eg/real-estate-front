@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 export default function Details() {
   return <>
-  <section className='container-main space-y-4 py-6 bg-white'>
+  <section className='w-full space-y-4 py-6 '>
 <div className='flex items-center space-x-2 text-xl max-[391px]:text-sm text-primary '>
   <p>المشاريع</p>
     <p><IoIosArrowBack className='text-2xl inline-block' />عقارات </p>

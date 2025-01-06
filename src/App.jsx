@@ -10,12 +10,8 @@ import CompanyHome from "./Company/Pages/Home/Home";
 import clientRoute from "./client/routes/ClientRoute";
 
 // ! You can find an example for routing for your flow in company role
-import TermsAndCondattions from "./Company/Pages/TermsAndCondation/TermsAndCondattions";
-import Details from "./Company/Pages/Details/Details";
-import Mybalance from "./Company/Pages/Mybalance/Mybalance";
-import Paid from "./Company/Pages/paid/paid";
-import Team from "./Company/Pages/Team/Team";
-import Seting from "./Company/Pages/Setting/Seting";
+
+import compantRoute from "./Company/routes/CompanyRoutes";
 
 
 
@@ -29,12 +25,6 @@ export default function App() {
         // { path: "login", element: <Login /> },
         // { path: "register", element: <Register /> },
       { path: "/", element: <Home /> },
-      {path: "terms", element: <TermsAndCondattions />},
-      {path: "details", element: <Details />},
-      {path: "mybalance", element: <Mybalance />},
-      {path: "paid", element: <Paid />},
-      {path: "team", element: <Team/>},
-      {path:"setting", element: <Seting/>},
      
         
         // { index: true, element: <Home /> },
@@ -42,7 +32,9 @@ export default function App() {
       errorElement: <ErrorElement />,
     },
     clientRoute,
+    compantRoute,
     {
+
       //! Here is the main route of the role
       path: "/company",
       element: (
