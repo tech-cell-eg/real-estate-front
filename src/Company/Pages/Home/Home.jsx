@@ -4,7 +4,7 @@ import { Outlet } from "react-router-dom";
 
 export default function CompanyHome() {
   return<>
-  <section className='container-main'>
+  <section className=''>
     <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
       <div className=' rounded bg-white shadow-xl hover:bg-gradient-to-br from-primary via-primary to-[#000000]  hover:text-white transition-all duration-300'>
         {/* image */}
