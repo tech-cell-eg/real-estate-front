@@ -18,12 +18,12 @@ import InspectorRegister from "./Auth/components/InspectorRegister";
 import TermsAndCondattions from "./Company/Pages/TermsAndCondation/TermsAndCondattions";
 import Details from "./Company/Pages/Details/Details";
 import Mybalance from "./Company/Pages/Mybalance/Mybalance";
-import Paid from "./Company/Pages/paid/paid";
 import Team from "./Company/Pages/Team/Team";
 import Seting from "./Company/Pages/Setting/Seting";
 import PersonCustomerRegisteration from "./Auth/components/PersonCustomerRegisteration";
 import CompanyCustomerRegisteration from "./Auth/components/CompanyCustomerRegisteration";
 import EvaluationCompanyRegister from "./Auth/components/EvaluationCompanyRegister";
+import { Toaster } from "react-hot-toast";
 
 export default function App() {
   const routes = createBrowserRouter([
@@ -79,5 +79,10 @@ export default function App() {
     { path: "*", element: <NotFound /> },
   ]);
 
-  return <RouterProvider router={routes} />;
+  return<>
+  <Toaster/>
+  <RouterProvider router={routes} />;
+  </>
+  
+  
 }
