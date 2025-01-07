@@ -20,7 +20,7 @@ function Register() {
             to="/customerRegister"
             className="w-[60%] mb-4 flex items-center justify-between  p-4 border rounded-3xl bg-[#D1E8E2] bg-opacity-30"
           >
-            <div className="text-xl text-[#C29062]">عميل</div>
+            <div className="text-xl text-[#C29062] font-bold">عميل</div>
             <img
               src="./photos/register3.png"
               alt="Client"
@@ -32,7 +32,9 @@ function Register() {
             to="/evaluationCompanyRegister"
             className="w-[60%] mb-4 flex items-center justify-between p-4 border rounded-3xl bg-[#D1E8E2] bg-opacity-30"
           >
-            <span className="text-xl text-[#C29062]">شركة التقييم</span>
+            <span className="text-xl text-[#C29062] font-bold">
+              شركة التقييم
+            </span>
             <img
               src="./photos/register2.png"
               alt="Evaluation Company"
@@ -44,7 +46,7 @@ function Register() {
             to="/inspectorRegister"
             className="w-[60%] flex items-center justify-between p-4 border rounded-3xl bg-[#D1E8E2] bg-opacity-30"
           >
-            <span className="text-xl text-[#C29062]">معاين</span>
+            <span className="text-xl text-[#C29062] font-bold">معاين</span>
             <img
               src="./photos/register1.png"
               alt="Inspector"
@@ -71,7 +73,7 @@ function Register() {
           <p className="text-2xl mb-8">
             لتبقي علي تواصل معنا من فضلك قم بالتسجيل الأن.
           </p>
-          <Link to="register">
+          <Link to="/login">
             <button className="bg-[#C29062] text-white py-2 px-4 rounded-full flex gap-2 items-center mr-4">
               <div>
                 <FaArrowRight />

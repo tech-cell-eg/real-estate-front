@@ -14,7 +14,6 @@ import clientRoute from "./client/routes/ClientRoute";
 import Login from "./Auth/components/Login";
 import Register from "./Auth/components/Register";
 import CustomerRegister from "./Auth/components/CustomerRegister";
-import CompanyRegister from "./Auth/components/CompanyRegister";
 import InspectorRegister from "./Auth/components/InspectorRegister";
 import TermsAndCondattions from "./Company/Pages/TermsAndCondation/TermsAndCondattions";
 import Details from "./Company/Pages/Details/Details";
@@ -22,7 +21,9 @@ import Mybalance from "./Company/Pages/Mybalance/Mybalance";
 import Paid from "./Company/Pages/paid/paid";
 import Team from "./Company/Pages/Team/Team";
 import Seting from "./Company/Pages/Setting/Seting";
-
+import PersonCustomerRegisteration from "./Auth/components/PersonCustomerRegisteration";
+import CompanyCustomerRegisteration from "./Auth/components/CompanyCustomerRegisteration";
+import EvaluationCompanyRegister from "./Auth/components/EvaluationCompanyRegister";
 
 export default function App() {
   const routes = createBrowserRouter([
@@ -33,8 +34,19 @@ export default function App() {
         { path: "login", element: <Login /> },
         { path: "register", element: <Register /> },
         { path: "customerRegister", element: <CustomerRegister /> },
-        { path: "evaluationCompanyRegister", element: <CompanyRegister /> },
+        {
+          path: "evaluationCompanyRegister",
+          element: <EvaluationCompanyRegister />,
+        },
         { path: "inspectorRegister", element: <InspectorRegister /> },
+        {
+          path: "personCustomerRegister",
+          element: <PersonCustomerRegisteration />,
+        },
+        {
+          path: "companyCustomerRegister",
+          element: <CompanyCustomerRegisteration />,
+        },
       ],
       errorElement: <ErrorElement />,
     },
