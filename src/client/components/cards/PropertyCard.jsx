@@ -1,31 +1,35 @@
 import Button from "../Button";
 import cancel from "../../../assets/client/cancel.png";
 import edit from "../../../assets/client/edit.png";
+import PropTypes from "prop-types";
 
-const PropertyCard = () => {
+const PropertyCard = ({ property, index }) => {
+  const defaultImage = "https://newstart-eg.com/static/images/placeholder.jpg";
+
   return (
     <div className="w-full bg-white rounded-lg shadow-md overflow-hidden border border-gray-200">
       {/* Image */}
       <div className="relative h-40">
         <img
-          src="https://newstart-eg.com/static/images/placeholder.jpg"
+          src={property.images[0] || defaultImage}
           alt="Property"
           className="w-full h-full object-cover"
         />
         <div className="absolute top-2 left-2 bg-primary text-white text-sm px-3 py-1 rounded">
-          عرض: 1
+          عرض: {index + 1}
         </div>
       </div>
 
       {/* Content */}
       <div className="p-4">
-        <h3 className="text-lg font-bold text-primary mb-2">الرياض</h3>
-        <p className="text-black font-bold text-sm mb-1 ">
-          عقار في شارع السند، حي النرجس، الرياض، منطقة الرياض
+        <h3 className="text-lg font-bold text-primary mb-2">
+          {property.address}
+        </h3>
+        <p className="text-black font-bold text-sm mb-1">
+          {property.area}, {property.city}, {property.region}
         </p>
         <p className="text-gray-600 text-sm mb-4 line-clamp-2">
-          تتكون من صالة ومجلس وثلاث غرف نوم ومطبخ وثلاث دورات مياه وتراس مطل على
-          الشارع بمساحة 138م
+          {property.description}
         </p>
 
         {/* Buttons */}
@@ -40,12 +44,24 @@ const PropertyCard = () => {
             icon={cancel}
             label="إنهاء"
             onClick={() => console.log("Delete clicked")}
-            className=" px-5 py-1"
+            className="px-5 py-1"
           />
         </div>
       </div>
     </div>
   );
+};
+
+PropertyCard.propTypes = {
+  property: PropTypes.shape({
+    images: PropTypes.arrayOf(PropTypes.string),
+    address: PropTypes.string,
+    area: PropTypes.string,
+    city: PropTypes.string,
+    region: PropTypes.string,
+    description: PropTypes.string,
+  }).isRequired,
+  index: PropTypes.number.isRequired, 
 };
 
 export default PropertyCard;
