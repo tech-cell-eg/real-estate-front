@@ -1,5 +1,6 @@
 import React from "react";
 import Card from "../components/Card";
+import Layout from "../../UI/layout/Layout"
 function Inspector() {
   const info = {
     title: "عقار الشروق",

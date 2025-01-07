@@ -7,21 +7,22 @@ import {
   BsEye,
   BsEyeSlash,
 } from "react-icons/bs";
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import { FaArrowLeft, FaArrowRight, FaPlus } from "react-icons/fa";
+import { FaLocationDot } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 
-function CompanyRegister() {
+function CompanyCustomerRegisteration() {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [city, setCity] = useState("");
-  const [taxNumber, setTaxNumber] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [termsAccepted, setTermsAccepted] = useState(false);
   const [errors, setErrors] = useState({});
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [file, setFile] = useState(null);
 
   const validateEmail = (email) => /\S+@\S+\.\S+/.test(email);
   const validatePhoneNumber = (number) => /^01[0-2,5]{1}[0-9]{8}$/.test(number); // Egyptian phone number pattern
@@ -48,10 +49,7 @@ function CompanyRegister() {
       newErrors.city = "يرجى إدخال المدينة.";
       isValid = false;
     }
-    if (!taxNumber) {
-      newErrors.taxNumber = "يرجى إدخال الرقم الضريبي.";
-      isValid = false;
-    }
+
     if (!password) {
       newErrors.password = "يرجى إدخال كلمة المرور.";
       isValid = false;
@@ -62,6 +60,10 @@ function CompanyRegister() {
     }
     if (!termsAccepted) {
       newErrors.termsAccepted = "يجب قبول الشروط والأحكام.";
+      isValid = false;
+    }
+    if (!file) {
+      newErrors.file = "يرجى تحميل الملف.";
       isValid = false;
     }
 
@@ -93,9 +95,9 @@ function CompanyRegister() {
         email,
         phoneNumber,
         city,
-        taxNumber,
         password,
         termsAccepted,
+        file,
       };
       console.log(formData);
     }
@@ -115,7 +117,7 @@ function CompanyRegister() {
             className="mb-6 w-16 h-16"
           />
           <h1 className="text-3xl font-bold text-[#C29062] mb-8">
-            قم باختيار حالة حسابك!
+            انشاء حساب جديد
           </h1>
 
           <form
@@ -152,16 +154,10 @@ function CompanyRegister() {
                 placeholder: "اختار المدينة",
                 value: city,
                 onChange: setCity,
-                icon: <BsPerson className="text-gray-400 mx-2" size={24} />,
+                icon: (
+                  <FaLocationDot className="text-gray-400 mx-2" size={24} />
+                ),
                 error: errors.city,
-              },
-              {
-                type: "text",
-                placeholder: "الرقم الضريبي",
-                value: taxNumber,
-                onChange: setTaxNumber,
-                icon: <BsPerson className="text-gray-400 mx-2" size={24} />,
-                error: errors.taxNumber,
               },
             ].map(
               ({ type, placeholder, value, onChange, icon, error }, idx) => (
@@ -210,23 +206,23 @@ function CompanyRegister() {
                   className="w-full mb-4 flex flex-col items-center"
                   key={idx}
                 >
-                  <div className="flex items-center border rounded-full w-[65%]">
-                    <BsLock className="text-gray-400 mx-2 " size={24} />
+                  <div className="flex items-center border rounded-full w-[65%] relative">
+                    <BsLock className="text-gray-400 mx-2" size={24} />
                     <input
                       type={show ? "text" : "password"}
                       placeholder={placeholder}
-                      className={inputClasses}
+                      className={`${inputClasses}`} // Added padding to make space for the icon
                       value={value}
                       onChange={(e) => onChange(e.target.value)}
                     />
                     <div
-                      className="cursor-pointer mr-2"
+                      className="absolute left-2 cursor-pointer"
                       onClick={() => setShow(!show)}
                     >
                       {show ? (
-                        <BsEyeSlash className="text-gray-400 px-3" size={24} />
+                        <BsEyeSlash className="text-gray-400" size={24} />
                       ) : (
-                        <BsEye className="text-gray-400 px-3" size={24} />
+                        <BsEye className="text-gray-400" size={24} />
                       )}
                     </div>
                   </div>
@@ -236,6 +232,24 @@ function CompanyRegister() {
                 </div>
               )
             )}
+            {/* File Upload */}
+            <div className="w-full mb-4 flex flex-col items-center">
+              <label className="flex items-center justify-center border rounded-xl w-[40%] py-2 cursor-pointer bg-[#D1E8E2] text-[#000]">
+                <span>إضافة تفويض</span>
+                <FaPlus className="mr-2" />
+                <input
+                  type="file"
+                  className="hidden"
+                  onChange={(e) => setFile(e.target.files[0])}
+                />
+              </label>
+              {file && (
+                <p className="text-gray-600 text-sm mt-1">{file.name}</p>
+              )}
+              {errors.file && (
+                <p className="text-red-500 text-sm mt-1">{errors.file}</p>
+              )}
+            </div>
 
             {/* Checkbox */}
             <div className="flex items-center mb-4">
@@ -293,4 +307,4 @@ function CompanyRegister() {
   );
 }
 
-export default CompanyRegister;
+export default CompanyCustomerRegisteration;

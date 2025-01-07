@@ -4,13 +4,8 @@ import { Link } from 'react-router-dom'
 
 export default function Details() {
   return <>
-  <section className='container-main space-y-4 py-6 bg-white'>
-<div className='flex items-center space-x-2 text-xl max-[391px]:text-sm text-primary '>
-  <p>المشاريع</p>
-    <p><IoIosArrowBack className='text-2xl inline-block' />عقارات </p>
-    <p><IoIosArrowBack className='text-2xl  inline-block' />تفاصيل</p>
-   
-</div>
+  <section className='w-full space-y-4 py-6 '>
+
 <div className=' text-xl font-bold'>شقة للتمليك في شارع السند ، حي النرجس ، الرياض ، امارة منطقة الرياض</div>
 
 <div className='grid grid-cols-12 rounded-xl gap-2 overflow-hidden'>
@@ -89,20 +84,20 @@ export default function Details() {
 
 <div className='md:flex space-y-4 md:space-y-0 gap-6 justify-between mt-4'>
 <div className='md:w-1/2'>
-<Link to={"#"} className='py-2 px-6 text-center rounded inline-block w-full  bg-[#D1E8E2]'>اختيار فريق</Link>
+<Link to={"/company/projects/chooseTeam"} className='py-2 px-6 text-center rounded inline-block w-full  bg-[#D1E8E2]'>اختيار فريق</Link>
 </div>
 
 <div className='md:w-1/2'>
-  <Link to={"#"} className='py-2 px-6 text-center rounded inline-block w-full  bg-[#D1E8E2]'>التعليقات </Link></div>
+  <Link to={"/company/projects/comments"} className='py-2 px-6 text-center rounded inline-block w-full  bg-[#D1E8E2]'>التعليقات </Link></div>
 </div>
 
 <div className='md:flex space-y-4 md:space-y-0 gap-6 justify-between mt-4'>
 <div className='md:w-1/2'>
-<Link to={"#"} className='py-2 px-6 text-center rounded inline-block w-full  bg-[#D1E8E2]'>تقارير الفريق</Link>
+<Link to={"/company/projects/TeamReport"} className='py-2 px-6 text-center rounded inline-block w-full  bg-[#D1E8E2]'>تقارير الفريق</Link>
 </div>
 
 <div className='md:w-1/2'>
-<Link to={"#"} className='py-2 px-6 text-center rounded inline-block w-full  bg-[#D1E8E2]'>كتابه التقييم</Link>
+<Link to={"/company/projects/companyReport"} className='py-2 px-6 text-center rounded inline-block w-full  bg-[#D1E8E2]'>كتابه التقييم</Link>
 </div>
 </div>
 

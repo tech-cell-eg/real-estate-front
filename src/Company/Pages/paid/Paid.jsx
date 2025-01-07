@@ -2,13 +2,13 @@ import React from 'react'
 
 export default function Paid() {
   return <>
-  <section className='container-main'>
+  <section className=''>
    <div>
    <div className='grid grid-cols-3 gap-4'>
     {/* card */}
        <div className='space-y-2 p-1 rounded border border-gray-300 shadow-2xl hover:bg-primary group hover:text-white transition-all duration-300'>
        <div className='relative'>
-            <img  src='public/v987-09.jpg' alt='' className='w-full h-full'/>
+            <img  src='/v987-09.jpg' alt='' className='w-full h-full'/>
             <div  className='absolute top-3 left-3 bg-[#45ED0A] border-2 border-white rounded-full  text-white px-6 py-2 text-sm font-bold '>مدفوع</div>
         </div>
 
