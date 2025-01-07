@@ -3,7 +3,7 @@ import AddPropertyForm from "../components/forms/AddPropertyForm";
 
 const AddProperty = () => {
   return (
-    <div className="bg-gray-100">
+    <div >
       <AddPropertyHeader />
       <AddPropertyForm />
     </div>

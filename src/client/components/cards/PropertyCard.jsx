@@ -1,17 +1,51 @@
 import Button from "../Button";
 import cancel from "../../../assets/client/cancel.png";
+import deleteIcon from "../../../assets/client/delete.svg";
 import edit from "../../../assets/client/edit.png";
 import PropTypes from "prop-types";
+import { deleteProperty } from "../../clientApi/Properties";
+import Dialog from "../Dialog";
+import { useState } from "react";
 
-const PropertyCard = ({ property, index }) => {
+const PropertyCard = ({ property, index, onDelete }) => {
+  const [isDeleteDialogOpen, setIsDeleteDialogOpen] = useState(false);
+  const [dialogStatement, setDialogStatement] = useState("");
+  const [propertyToDelete, setPropertyToDelete] = useState(null);
+  const [isDeleted, setIsDeleted] = useState(false);
+
+  const openDeleteDialog = () => {
+    setDialogStatement("هل أنت متأكد من حذف هذا العقار؟");
+    setIsDeleteDialogOpen(true);
+    setPropertyToDelete(property.id);
+  };
+
+  const handleDelete = async () => {
+    if (propertyToDelete) {
+      try {
+        await deleteProperty(propertyToDelete);
+        setIsDeleted(true);
+        setIsDeleteDialogOpen(false);
+        if (onDelete) {
+          onDelete(property.id);
+        }
+      } catch (error) {
+        console.error("Failed to delete property:", error);
+      }
+    }
+  };
+
   const defaultImage = "https://newstart-eg.com/static/images/placeholder.jpg";
 
   return (
-    <div className="w-full bg-white rounded-lg shadow-md overflow-hidden border border-gray-200">
+    <div
+      className={`w-full bg-white rounded-lg shadow-md overflow-hidden border border-gray-200 transition-all duration-300 ${
+        isDeleted ? "opacity-0 scale-95" : ""
+      }`}
+    >
       {/* Image */}
       <div className="relative h-40">
         <img
-          src={property.images[0] || defaultImage}
+          src={property.images[0]?.url || defaultImage}
           alt="Property"
           className="w-full h-full object-cover"
         />
@@ -22,11 +56,11 @@ const PropertyCard = ({ property, index }) => {
 
       {/* Content */}
       <div className="p-4">
-        <h3 className="text-lg font-bold text-primary mb-2">
+        <h3 className="text-lg font-bold text-primary mb-2 line-clamp-1">
           {property.address}
         </h3>
         <p className="text-black font-bold text-sm mb-1">
-          {property.area}, {property.city}, {property.region}
+          {property.city}, {property.region}
         </p>
         <p className="text-gray-600 text-sm mb-4 line-clamp-2">
           {property.description}
@@ -42,26 +76,39 @@ const PropertyCard = ({ property, index }) => {
           />
           <Button
             icon={cancel}
-            label="إنهاء"
-            onClick={() => console.log("Delete clicked")}
+            label="حذف"
+            onClick={openDeleteDialog}
             className="px-5 py-1"
           />
         </div>
       </div>
+
+      <Dialog
+        isOpen={isDeleteDialogOpen}
+        onAccept={handleDelete}
+        onReject={() => setIsDeleteDialogOpen(false)}
+        statement={dialogStatement}
+        image={deleteIcon} 
+      />
     </div>
   );
 };
 
 PropertyCard.propTypes = {
   property: PropTypes.shape({
-    images: PropTypes.arrayOf(PropTypes.string),
-    address: PropTypes.string,
-    area: PropTypes.string,
-    city: PropTypes.string,
-    region: PropTypes.string,
-    description: PropTypes.string,
+    images: PropTypes.arrayOf(
+      PropTypes.shape({
+        url: PropTypes.string.isRequired,
+      })
+    ),
+    id: PropTypes.number.isRequired,
+    address: PropTypes.string.isRequired,
+    city: PropTypes.string.isRequired,
+    region: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
   }).isRequired,
-  index: PropTypes.number.isRequired, 
+  index: PropTypes.number.isRequired,
+  onDelete: PropTypes.func,
 };
 
 export default PropertyCard;

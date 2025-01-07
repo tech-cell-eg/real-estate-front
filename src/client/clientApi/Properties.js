@@ -9,6 +9,7 @@ export const getProperties = async () => {
     handleError(error, "Failed to fetch Client Properties");
   }
 };
+
 // Add Property
 export const addProperty = async (formDataToSend) => {
   for (let [key, value] of formDataToSend.entries()) {
@@ -16,6 +17,17 @@ export const addProperty = async (formDataToSend) => {
   }
   try {
     const response = await api.post("properties", formDataToSend);
+    return response.data;
+  } catch (error) {
+    handleError(error, "Failed to add Property");
+  }
+};
+
+
+// Delete Property
+export const deleteProperty = async (id) => {
+  try {
+    const response = await api.delete(`properties/${id}`);
     return response.data;
   } catch (error) {
     handleError(error, "Failed to add Property");

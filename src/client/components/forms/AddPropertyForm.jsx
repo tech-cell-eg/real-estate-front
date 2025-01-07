@@ -121,7 +121,7 @@ const AddPropertyForm = () => {
   };
 
   return (
-    <div className="p-8 rounded-lg shadow-lg w-full bg-white max-w-md mx-auto">
+    <div className="p-8 rounded-lg shadow-lg bg-white  w-full ">
       <form className="space-y-4" onSubmit={handleSubmit}>
         {/* Address */}
         <div>
@@ -247,7 +247,7 @@ const AddPropertyForm = () => {
           <Button
             label="إضافة موقع"
             onClick={() => setShowMap(!showMap)}
-            className="w-full bg-gray-200 text-black rounded-lg py-2"
+            className="w-[40%] bg-gray-200 text-black rounded-lg py-2"
             icon={addLocation}
           />
           {formData.latitude && formData.longitude && (
@@ -268,7 +268,7 @@ const AddPropertyForm = () => {
           <Button
             label="إضافة صور العقار"
             onClick={() => fileInputRef.current.click()}
-            className="w-full bg-gray-200 text-black rounded-lg py-2"
+            className="w-[40%] bg-gray-200 text-black rounded-lg py-2"
             icon={addPicture}
           />
 
@@ -297,12 +297,13 @@ const AddPropertyForm = () => {
             </div>
           )}
         </div>
+  
 
         {/* Submit */}
         <div className="text-center mt-4">
           <button
             type="submit"
-            className="bg-primary text-white px-8 py-3 rounded-lg shadow-lg font-bold hover:bg-opacity-90"
+            className="bg-primary text-white px-8 py-3 rounded-lg shadow-lg font-bold hover:bg-opacity-90 w-[50%]"
             disabled={loading}
           >
             {loading ? "جاري الإضافة..." : "تأكيد"}
@@ -319,6 +320,7 @@ const AddPropertyForm = () => {
         <Alert
           color="failure"
           onDismiss={() => setErrors({ ...errors, submit: "" })}
+          className="text-danger text-bold"
         >
           {errors.submit}
         </Alert>
