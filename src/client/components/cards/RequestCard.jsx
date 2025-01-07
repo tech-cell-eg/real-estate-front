@@ -1,6 +1,6 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
-import RequestModal from "../RequestModal";
+import RequestModal from "../models/RequestModal";
 
 const RequestCard = ({ image, title, location, description, badge }) => {
   const [isModalOpen, setModalOpen] = useState(false);

@@ -48,7 +48,7 @@ Dialog.propTypes = {
   onReject: PropTypes.func.isRequired,
   isOpen: PropTypes.bool.isRequired,
   statement: PropTypes.string.isRequired,
-  image: PropTypes.string.isRequired,
+  image: PropTypes.string,
   statementClassName: PropTypes.string,
 };
 
