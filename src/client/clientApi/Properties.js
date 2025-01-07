@@ -23,7 +23,6 @@ export const addProperty = async (formDataToSend) => {
   }
 };
 
-
 // Delete Property
 export const deleteProperty = async (id) => {
   try {
@@ -31,5 +30,17 @@ export const deleteProperty = async (id) => {
     return response.data;
   } catch (error) {
     handleError(error, "Failed to add Property");
+  }
+};
+
+// Update Property
+export const updateProperty = async (id, updatedData) => {
+  console.log("Data sent to API:", updatedData);
+  try {
+    const response = await api.put(`properties/${id}`, updatedData);
+    console.log("Response from API:", response.data);
+    return response.data;
+  } catch (error) {
+    handleError(error, "Failed to update Property");
   }
 };

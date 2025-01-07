@@ -3,15 +3,17 @@ import cancel from "../../../assets/client/cancel.png";
 import deleteIcon from "../../../assets/client/delete.svg";
 import edit from "../../../assets/client/edit.png";
 import PropTypes from "prop-types";
-import { deleteProperty } from "../../clientApi/Properties";
+import { deleteProperty, updateProperty } from "../../clientApi/Properties";
 import Dialog from "../Dialog";
 import { useState } from "react";
+import EditPropertyModal from "../models/EditPropertyModal";
 
-const PropertyCard = ({ property, index, onDelete }) => {
+const PropertyCard = ({ property, index, onDelete, onEdit }) => {
   const [isDeleteDialogOpen, setIsDeleteDialogOpen] = useState(false);
   const [dialogStatement, setDialogStatement] = useState("");
   const [propertyToDelete, setPropertyToDelete] = useState(null);
   const [isDeleted, setIsDeleted] = useState(false);
+  const [isEditModalOpen, setIsEditModalOpen] = useState(false);
 
   const openDeleteDialog = () => {
     setDialogStatement("هل أنت متأكد من حذف هذا العقار؟");
@@ -34,6 +36,22 @@ const PropertyCard = ({ property, index, onDelete }) => {
     }
   };
 
+  const openEditModal = () => {
+    setIsEditModalOpen(true);
+  };
+
+  const handleSaveEdit = async (editedProperty) => {
+    try {
+      const updatedProperty = await updateProperty(property.id, editedProperty);
+      if (onEdit) {
+        onEdit(updatedProperty.data);
+      }
+      setIsEditModalOpen(false);
+    } catch (error) {
+      console.error("Failed to update property:", error);
+    }
+  };
+
   const defaultImage = "https://newstart-eg.com/static/images/placeholder.jpg";
 
   return (
@@ -45,7 +63,7 @@ const PropertyCard = ({ property, index, onDelete }) => {
       {/* Image */}
       <div className="relative h-40">
         <img
-          src={property.images[0]?.url || defaultImage}
+          src={property.images?.[0]?.url || defaultImage}
           alt="Property"
           className="w-full h-full object-cover"
         />
@@ -71,7 +89,7 @@ const PropertyCard = ({ property, index, onDelete }) => {
           <Button
             icon={edit}
             label="تعديل"
-            onClick={() => console.log("Edit clicked")}
+            onClick={openEditModal}
             className="px-5 py-1"
           />
           <Button
@@ -83,12 +101,21 @@ const PropertyCard = ({ property, index, onDelete }) => {
         </div>
       </div>
 
+      {/* Delete Confirmation Dialog */}
       <Dialog
         isOpen={isDeleteDialogOpen}
         onAccept={handleDelete}
         onReject={() => setIsDeleteDialogOpen(false)}
         statement={dialogStatement}
-        image={deleteIcon} 
+        image={deleteIcon}
+      />
+
+      {/* Edit Property Modal */}
+      <EditPropertyModal
+        isOpen={isEditModalOpen}
+        onClose={() => setIsEditModalOpen(false)}
+        property={property}
+        onSave={handleSaveEdit}
       />
     </div>
   );
@@ -109,6 +136,7 @@ PropertyCard.propTypes = {
   }).isRequired,
   index: PropTypes.number.isRequired,
   onDelete: PropTypes.func,
+  onEdit: PropTypes.func,
 };
 
 export default PropertyCard;

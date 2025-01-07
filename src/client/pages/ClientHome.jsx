@@ -29,6 +29,14 @@ function ClientHome() {
       prevProperties.filter((property) => property.id !== id)
     );
   };
+  const handleEditProperty = (updatedProperty) => {
+    setProperties((prevProperties) =>
+      prevProperties.map((property) =>
+        property.id === updatedProperty.id ? updatedProperty : property
+      )
+    );
+  };
+  
 
   if (loading)
     return (
@@ -62,6 +70,7 @@ function ClientHome() {
               property={property}
               index={index}
               onDelete={handleDeleteProperty} 
+              onEdit={handleEditProperty}
             />
           ))}
         </div>
