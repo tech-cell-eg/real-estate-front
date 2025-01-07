@@ -23,7 +23,8 @@ import Mybalance from "./Company/Pages/Mybalance/Mybalance";
 import Paid from "./Company/Pages/paid/paid";
 import Team from "./Company/Pages/Team/Team";
 import Seting from "./Company/Pages/Setting/Seting";
-
+import Index from "./inspector/pages/Index";
+import InspectorRoute from "./inspector/inspector-route/InspectorRoute";
 export default function App() {
   const routes = createBrowserRouter([
     {
@@ -74,25 +75,26 @@ export default function App() {
       path: "/reviewer",
       element: (
         <ProtectedRoute>
-          <RoleProtectedRoute allowedRoles={["reviewer"]}>
-            {/* <ReviewerDashboard /> */}
-          </RoleProtectedRoute>
+          {/* <RoleProtectedRoute allowedRoles={["reviewer"]}> */}
+          {/* <ReviewerDashboard /> */}
+          {/* </RoleProtectedRoute> */}
         </ProtectedRoute>
       ),
       errorElement: <ErrorElement />,
     },
-    {
-      path: "/inspector",
-      element: (
-        <ProtectedRoute>
-          <RoleProtectedRoute allowedRoles={["inspector"]}>
-            {/* <InspectorDashboard /> */}
-            <Inspector />
-          </RoleProtectedRoute>
-        </ProtectedRoute>
-      ),
-      errorElement: <ErrorElement />,
-    },
+    // {
+    //   path: "/inspector",
+    //   element: (
+    //     <ProtectedRoute>
+    //       {/* <RoleProtectedRoute allowedRoles={["inspector"]}> */}
+    //       {/* <InspectorDashboard /> */}
+    //       <InspectorRoute />
+    //       {/* </RoleProtectedRoute> */}
+    //     </ProtectedRoute>
+    //   ),
+    //   errorElement: <ErrorElement />,
+    // },
+    InspectorRoute,
     { path: "/not-authorized", element: <NotAuthorized /> },
     { path: "*", element: <NotFound /> },
   ]);

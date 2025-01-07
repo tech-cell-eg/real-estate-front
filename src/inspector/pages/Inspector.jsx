@@ -1,24 +1,32 @@
-import React from 'react'
-import Layout from "../../Home/Layout"
+import React from "react";
+import Card from "../components/Card";
 function Inspector() {
-  //  const sidebarTabs = [
-  //     { label: "الرئيسية", link: "", icon: <FaHome /> },
-  //     { label: "اضافه عقار", link: "", icon: <FaUsers /> },
-  //     { label: "عروض", link: "/projects", icon: <FaProjectDiagram /> },
-  //     { label: "طلبات", link: "/balance", icon: <FaRegBuilding /> },
-  //     { label: "المدفوعات", link: "/payments", icon: <FaCreditCard /> },
-  //     { label: "شروط وأحكام", link: "/terms", icon: <FaFileContract /> },
-  //     { label: "الإعدادات", link: "/settings", icon: <FaCog /> },
-  //     { label: "تسجيل الخروج", link: "/logout", icon: <FaSignOutAlt /> },
-  //   ];
-  
+  const info = {
+    title: "عقار الشروق",
+    description: ` عقار في شارع السند، حي النرجس. الرياض، منطقة الرياض.`,
+    companyName: `شركة عقاركم`,
+    image: "https://via.placeholder.com/400x200",
+  };
   return (
-    <Layout>
-        <section>
-            <h1>welcome inspector</h1>
-        </section>
-    </Layout>
-  )
+    <section>
+      <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-3 gap-8">
+        {" "}
+        <div className="col-span-1">
+          <Card info={info} />
+        </div><div className="col-span-1">
+          <Card info={info} />
+        </div><div className="col-span-1">
+          <Card info={info} />
+        </div><div className="col-span-1">
+          <Card info={info} />
+        </div><div className="col-span-1">
+          <Card info={info} />
+        </div><div className="col-span-1">
+          <Card info={info} />
+        </div>
+      </div>
+    </section>
+  );
 }
 
-export default Inspector
+export default Inspector;

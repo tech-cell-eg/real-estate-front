@@ -1,0 +1,16 @@
+.back-green {
+  background: rgb(176, 255, 136);
+  background: linear-gradient(
+    90deg,
+    rgba(176, 255, 136, 1) 0%,
+    rgba(69, 237, 10, 1) 37%
+  );
+}
+.back-red {
+  background: rgb(230, 108, 108);
+  background: linear-gradient(
+    90deg,
+    rgba(230, 108, 108, 1) 0%,
+    rgba(255, 0, 0, 1) 76%
+  );
+}
