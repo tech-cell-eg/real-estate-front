@@ -35,7 +35,7 @@ export default function AddPreviewer() {
       className="absolute top-1/2 right-6 transform -translate-y-1/2 text-gray-400 flex items-center justify-center gap-2 pointer-events-none transition-all duration-200"
     >
       <FaUser />
-      اسم المستخدم
+     
     </label>
   
     {/* Input */}
@@ -43,16 +43,9 @@ export default function AddPreviewer() {
       type="text"
       id="name"
       name="name"
-      placeholder=" "
-      className="w-full border rounded-full px-6 py-2 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
-      onFocus={(e) => {
-        e.target.previousElementSibling.classList.add("top-2", "-translate-y-0");
-      }}
-      onBlur={(e) => {
-        if (!e.target.value) {
-          e.target.previousElementSibling.classList.remove("top-2", "-translate-y-0", "text-primary");
-        }
-      }}
+      placeholder=" اسم المستخدم "
+      className="w-full pr-12 border rounded-full px-6 py-2 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
+     
     />
   </div>
   
@@ -65,7 +58,7 @@ export default function AddPreviewer() {
     >
      <MdOutlineEmail />
   
-     البريد الالكتروني
+   
     </label>
   
     {/* Input */}
@@ -73,16 +66,9 @@ export default function AddPreviewer() {
       type="email"
       id="email"
       name="email"
-      placeholder=" "
-      className="w-full border rounded-full px-6 py-2 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
-      onFocus={(e) => {
-        e.target.previousElementSibling.classList.add("top-2", "-translate-y-0");
-      }}
-      onBlur={(e) => {
-        if (!e.target.value) {
-          e.target.previousElementSibling.classList.remove("top-2", "-translate-y-0", "text-primary");
-        }
-      }}
+      placeholder="البريد الالكتروني"
+      className="w-full pr-12 border rounded-full px-6 py-2 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
+    
     />
   </div>
   
@@ -96,7 +82,7 @@ export default function AddPreviewer() {
      <FaPhoneAlt />
   
   
-    رقم الجوال
+   
     </label>
   
     {/* Input */}
@@ -104,16 +90,9 @@ export default function AddPreviewer() {
       type="phone"
       id="phone"
       name="phone"
-      placeholder=" "
-      className="w-full border rounded-full px-6 py-2 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
-      onFocus={(e) => {
-        e.target.previousElementSibling.classList.add("top-2", "-translate-y-0");
-      }}
-      onBlur={(e) => {
-        if (!e.target.value) {
-          e.target.previousElementSibling.classList.remove("top-2", "-translate-y-0", "text-primary");
-        }
-      }}
+      placeholder=" رقم الجوال "
+      className="w-full pr-12 border rounded-full px-6 py-2 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
+     
     />
   </div>
   
@@ -128,7 +107,7 @@ export default function AddPreviewer() {
   
   
   
-    كلمة المرور
+  
     </label>
   
     {/* Input */}
@@ -136,16 +115,9 @@ export default function AddPreviewer() {
       type={password}
       id="password"
       name="password"
-      placeholder=" "
-      className="w-full border rounded-full px-6 py-2 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
-      onFocus={(e) => {
-        e.target.previousElementSibling.classList.add("top-2", "-translate-y-0");
-      }}
-      onBlur={(e) => {
-        if (!e.target.value) {
-          e.target.previousElementSibling.classList.remove("top-2", "-translate-y-0", "text-primary");
-        }
-      }}
+      placeholder="  كلمة المرور "
+      className="w-full pr-12 border rounded-full px-6 py-2 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
+     
     />
     <div className='absolute top-1/2 left-6 transform -translate-y-1/2' >
    {password === "password" ?  <FaEye  onClick={handelPassType}/>: <FaEyeSlash onClick={handelPassType}/> }
@@ -163,7 +135,7 @@ export default function AddPreviewer() {
   
   
   
-      تاكيد كلمة المرور
+     
     </label>
   
     {/* Input */}
@@ -171,16 +143,9 @@ export default function AddPreviewer() {
       type={confirmPassword}
       id="re_password"
       name="re_password"
-      placeholder=" "
-      className="w-full border rounded-full px-6 py-2 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
-      onFocus={(e) => {
-        e.target.previousElementSibling.classList.add("top-2", "-translate-y-0");
-      }}
-      onBlur={(e) => {
-        if (!e.target.value) {
-          e.target.previousElementSibling.classList.remove("top-2", "-translate-y-0", "text-primary");
-        }
-      }}
+      placeholder=" تاكيد كلمة المرور "
+      className="w-full pr-12 border rounded-full px-6 py-2 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
+     
     />
      <div className='absolute top-1/2 left-6 transform -translate-y-1/2' >
    {confirmPassword === "password" ?  <FaEye  onClick={ handelConfirmPassType}/>: <FaEyeSlash onClick={ handelConfirmPassType}/> }
