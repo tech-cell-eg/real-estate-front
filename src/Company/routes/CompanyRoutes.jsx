@@ -34,7 +34,7 @@ const compantRoute = {
   errorElement: <ErrorElement />,
   children: [
     { index: true, element: <CompanyHome /> },
-    {path:"team",element:<Team/>},
+    {path:"team",element:<Team  />},
     {path:"settings",element:<Seting/>},
     {path:"terms",element:<TermsAndCondattions/>},
     {path:"projects",element:<Projects/>,children:[
