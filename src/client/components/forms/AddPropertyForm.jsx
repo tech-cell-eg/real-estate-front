@@ -99,7 +99,7 @@ const AddPropertyForm = () => {
     try {
       const response = await addProperty(formDataToSend);
       console.log("Property Added:", response);
-      setSuccessMessage("تمت إضافة العقار بنجاح!");
+      setSuccessMessage("(: تمت إضافة العقار بنجاح!");
       setFormData({
         address: "",
         city: "",
